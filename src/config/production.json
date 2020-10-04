@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://rurangwa:rurangwa@ecommerce-sf8rj.mongodb.net/test?retryWrites=true&w=majority"
+
+}
