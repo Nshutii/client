@@ -23,7 +23,7 @@ const Contact = () => {
                 </div>
 
                 <span>Address</span>
-                <p>123 Street, Nyarugenge, Kigali, Rwanda</p>
+                <p><a href="https://www.google.com/maps/place/Kigali+Phones+Center+Ltd/@-1.945581,30.059201,13z/data=!4m8!1m2!2m1!1skigali+phone+center!3m4!1s0x19dca418b5e91917:0x2eb7395efbe5f85b!8m2!3d-1.9460244!4d30.0599452?hl=en-US" target="_blank"> KN 4 Ave, Kigali,centenary house 5th floor, Rwanda</a></p>
               </div>
               <div className="contacts-card">
                 <div className="contacts-card-icon">
@@ -32,7 +32,7 @@ const Contact = () => {
                 </div>
 
                 <span>Email Address</span>
-                <p>kigaliphones@gmail.com</p>
+                <p><a href="mailto:kigaliphones@gmail.com">kigaliphones@gmail.com</a></p>
               </div>
               <div className="contacts-card">
                 <div className="contacts-card-icon">
@@ -40,13 +40,13 @@ const Contact = () => {
                 </div>
 
                 <span>Phone</span>
-                <p>+250788 285 979</p>
+                <p><a href="https://wa.me/message/SJKXVM2EKVS7E1" target="_blank" title="Contact Us">+250 727 311 429</a></p>
               </div>
             </div>
           </div>
           <div className="wrapper">
             <div className="form">
-              <form action="" className="contact-form">
+              <form method="POST" action="https://formspree.io/kigaliphones@gmail.com" className="contact-form">
                 <div className="title">
                   <h1>Get In Touch</h1>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius

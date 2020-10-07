@@ -103,8 +103,8 @@ const About = () => {
               <h5>Connect with us</h5>
               <div className="social-networks">
 
-                <Link to="https://twitter.com/ndiisanze" target="_blank" title="Twitter"><i className="fab fa-twitter" ></i></Link>
-                <Link to="https://www.instagram.com/ndiisanze/" target="_blank" title="Instagram" ><i className="fab fa-instagram"></i></Link>
+                <a href="https://twitter.com/ndiisanze" target="_blank" title="Twitter"><i className="fab fa-twitter" ></i></a>
+                <a href="https://www.instagram.com/ndiisanze/" target="_blank" title="Instagram" ><i className="fab fa-instagram"></i></a>
 
               </div>
             </div>

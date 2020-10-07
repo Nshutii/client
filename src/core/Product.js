@@ -4,9 +4,9 @@ import { Row, Col } from 'antd';
 import ProductImage from './Sections/ProductImage';
 import ProductInfo from './Sections/ProductInfo';
 import { Link, Redirect } from 'react-router-dom';
-import { addItem } from './cartHelpers';
+import { addItem,addWishlistItem } from './cartHelpers';
 import { read, listRelated } from './apiCore';
-import Card from './RelatedCard';
+import Card from './UCard';
 import img from '../img/kpc_3.jpg';
 import Menu from './Menu'
 import Footer from './Footer'
@@ -63,6 +63,16 @@ const Product = (props, { product }) => {
 
   };
 
+  const addToWishlist = () => {
+    addWishlistItem(Product, setRedirect(true));
+    console.log('added');
+
+    if (redirect) {
+      return <Redirect to="/cart" />;
+    }
+
+  };
+
   const shouldRedirect = redirect => {
     if (redirect) {
       return <Redirect to="/cart" />;
@@ -71,45 +81,49 @@ const Product = (props, { product }) => {
   return (
     <div>
     <Menu />
-    <div className=" productPage" >
+    <div   className=" productPage">
 
 
-      <div className=" productPage-sections" >
-        <div className='sectionOne' >
+      <div className=" productPage-sections " >
+        <div className='sectionOne ' >
           <ProductImage detail={Product} />
         </div>
-        <div className='sectionTwo'>
+        <div className='sectionTwo  '>
           <ProductInfo
             detail={Product} />
+             <div className="addToButtons">
+          <div className="addToCart-button mb-3">
+          <Link to='/cart' onClick={addToCart} id='bt'>Add to cart</Link>
+          </div>
+          <div className="addToWishlist-button">
+                    <Link to='/wishlist' onClick={addToWishlist} id='bt'>Add to Wishlist</Link>
+          </div>
+         
+            </div>
         </div>
-
       </div>
-      <div className="productPage-description">
+      <div className="productPage-description ">
         <div className="description-header">
           <div className="description-title">  <h2>Product Description</h2> </div>
         </div>
         <p> {Product.description}</p>
 
       </div>
-      <div className="addToCart-button">
-
-        <Link to='/cart' onClick={addToCart} id='bt'>Add to cart</Link>
-      </div>
+     
       <div className="relatedPart">
         <div className="relatedPart-header">
           <div className="relatedPart-title">  <h2>Related products</h2> </div>
         </div>
-        <div className="relatedProducts">
-          <div>
+        <div className="relatedProducts related-container">
+          <div className="row">
             {relatedProduct.map((p, i) => (
-              <div key={i}>
+                <div key={i} className=" col-md-4 col-sm-12 mb-3">
+
                 <Card className="card" product={p} />
               </div>
             ))}
           </div>
-          <div className="imgPart">
-            <img src={img} alt="" />
-          </div>
+         
         </div>
       </div>
    </div>

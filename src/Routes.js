@@ -25,6 +25,7 @@ import Orders from './admin/Orders';
 import Profile from './user/Profile';
 import ManageProducts from './admin/ManageProducts';
 import UpdateProduct from './admin/UpdateProduct';
+import Find from './core/Find'
 // import UpdateCategory from './admin/updateCategory';
 
 const Routes = () => {
@@ -56,6 +57,7 @@ const Routes = () => {
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/forbidden" exact component={Forbidden} />
+        <Route path="/find" exact component={Find} />
       </Switch>
     </BrowserRouter>
   );

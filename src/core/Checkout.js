@@ -136,7 +136,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
 
                     </div>
                     <div className="deliverys mt-4">
-                        <input onChange={handlePhone} value={data.phone} type="number" placeholder='Phone' />
+                        <input onChange={handlePhone} value={data.phone} type="phone" placeholder='Phone' />
 
                     </div>
 

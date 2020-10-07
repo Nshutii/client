@@ -4,7 +4,7 @@ import { signout, isAuthenticated } from "../auth";
 import { itemTotal } from "./cartHelpers";
 import img1 from '../img/11.2 shopping-bag.svg.svg'
 import Search from './Search'
-
+import logo from '../img/logo.jpg'
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
@@ -15,7 +15,11 @@ const isActive = (history, path) => {
 };
 
 const Menu = ({ history }) => (
-    <div>
+    <div className="what">
+        <div className="fix">
+
+            <a href="https://wa.me/message/SJKXVM2EKVS7E1" target="_blank" title="Contact Us"><i className="fab fa-whatsapp"></i></a>
+        </div>
         <div className="horizontal-line">
             <div className="containerNav">
 
@@ -25,9 +29,10 @@ const Menu = ({ history }) => (
                     <section className="header-info">
                         <div className="header-info-text">
                             <ul>
-                                <li><i className="fas fa-phone-volume"></i>+250788 285 979</li>
-                                <li><i className="far fa-envelope"></i>kigaliphones@gmail.com</li>
-                                <li><Link to="/">KPC</Link></li>
+                                <li> <i className="fab fa-whatsapp"></i>
+                                    <a href="https://wa.me/message/SJKXVM2EKVS7E1" target="_blank">+250 727 311 429</a></li>
+                                <li><i className="far fa-envelope"></i><a href="mailto:kigaliphones@gmail.com">kigaliphones@gmail.com</a></li>
+                                <li><Link to="/"><img src={logo} alt="" /></Link></li>
                             </ul>
                         </div>
                         <div className="header-info-list">
@@ -149,6 +154,7 @@ const Menu = ({ history }) => (
                                 )}
                             </ul>
                         </div>
+
                     </section>
                 </header>
 
@@ -161,7 +167,7 @@ const Menu = ({ history }) => (
                 <div className="navigation-logo">
                     <Link to="/">
 
-                        <h3>KPC</h3>
+                        <img src={logo} alt="" />
 
                     </Link>
                 </div>

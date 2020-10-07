@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Layout from '../core/Layout';
-import { signup } from '../auth';
+import { signup, isAuthenticated } from '../auth';
 import Menu from '../core/Menu';
 import Footer from '../core/Footer'
 
@@ -98,11 +98,16 @@ const Signup = () => {
         </div>
     );
 
-    const showSuccess = () => (
+    const showSuccess = () => 
         <div className="alert alert-info" style={{ display: success ? '' : 'none' }}>
             New account is created. Please <Link to="/signin">Signin</Link>
         </div>
-    );
+        
+             if (isAuthenticated()) {
+            return <Redirect to="/" />;
+        }
+        
+;
 
     return (
         <div>

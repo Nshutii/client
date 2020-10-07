@@ -26,7 +26,7 @@ const ProductInfo = (props) => {
             </div>
             <div className="main-content-info-list">
 
-                <p> <strong>Price</strong> : Rwf {Product.price}</p>
+                <p> Rwf {Product.price}</p>
 
                 <ul>
 
