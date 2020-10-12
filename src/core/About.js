@@ -121,7 +121,7 @@ const About = () => {
 
                 <Link to="https://twitter.com/ndiisanze" target="_blank" title="Twitter"><i className="fab fa-twitter" ></i></Link>
                 <Link to="https://www.instagram.com/ndiisanze/" target="_blank" title="Instagram" ><i className="fab fa-instagram"></i></Link>
-
+                
               </div>
             </div>
           </div>

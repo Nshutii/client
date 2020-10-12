@@ -1,21 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout';
 import { isAuthenticated } from '../auth';
+import { Typography, Button, Form, message, Input } from 'antd';
+import { ToastContainer, toast } from 'react-toastify';
+import Icon from '@ant-design/icons';
+import FileUpload from './utils/FileUpload'
 import {
     //  Link,
  Redirect } from 'react-router-dom';
+ import Menu from "../core/Menu"
+import Footer from '../core/Footer'
 import { getProduct, getCategories, updateProduct } from './apiAdmin';
+import Axios from 'axios';
 
-const UpdateProduct = ({ match }) => {
+const API = process.env.REACT_APP_API_URL;
+const { Title } = Typography;
+const { TextArea } = Input;
+
+
+const UpdateProduct = ( { match }) => {
     const [values, setValues] = useState({
-        name: '',
+        title: '',
         description: '',
+        short_description: '',
         price: '',
         categories: [],
         category: '',
-        shipping: '',
+        brand: '',
         quantity: '',
-        photo: '',
+        images: [],
         loading: false,
         error: false,
         createdProduct: '',
@@ -23,15 +36,18 @@ const UpdateProduct = ({ match }) => {
         formData: ''
     });
     const [categories, setCategories] = useState([]);
+    const [Images, setImages] = useState([])
 
     const { user, token } = isAuthenticated();
     const {
-        name,
+        title,
         description,
         price,
         // categories,
+        images,
+         short_description,
         category,
-        shipping,
+        brand,
         quantity,
         loading,
         error,
@@ -40,6 +56,9 @@ const UpdateProduct = ({ match }) => {
         formData
     } = values;
 
+    const updateImages = (newImages) => {
+        setImages(newImages)
+    }
     const init = productId => {
         getProduct(productId).then(data => {
             if (data.error) {
@@ -48,11 +67,13 @@ const UpdateProduct = ({ match }) => {
                 // populate the state
                 setValues({
                     ...values,
-                    name: data.name,
+                    title: data.title,
                     description: data.description,
+                    short_description: data.short_description,
                     price: data.price,
+                    images: data.images,
+                    brand: data.brand,
                     category: data.category._id,
-                    shipping: data.shipping,
                     quantity: data.quantity,
                     formData: new FormData()
                 });
@@ -78,12 +99,12 @@ const UpdateProduct = ({ match }) => {
     }, []);
 
     const handleChange = name => event => {
-        const value = name === 'photo' ? event.target.files[0] : event.target.value;
+        const value = name === 'images' ? event.target.files[0] : event.target.value;
         formData.set(name, value);
         setValues({ ...values, [name]: value });
     };
 
-    const clickSubmit = event => {
+    const onSubmit = event => {
         event.preventDefault();
         setValues({ ...values, error: '', loading: true });
 
@@ -93,10 +114,12 @@ const UpdateProduct = ({ match }) => {
             } else {
                 setValues({
                     ...values,
-                    name: '',
+                    title: '',
                     description: '',
-                    photo: '',
+                    short_description: '',
+                    images: [],
                     price: '',
+                    brand: '',
                     quantity: '',
                     loading: false,
                     error: false,
@@ -108,72 +131,110 @@ const UpdateProduct = ({ match }) => {
     };
 
     const newPostForm = () => (
-        <form className="mb-3" onSubmit={clickSubmit}>
-      <div className='text-center'>
+ 
+         <div className="addProductPage">
+            <div className="productForm" >
+                <Form onSubmit={onSubmit} >
+                     <FileUpload  onChange={handleChange('images')} refreshFunction={updateImages} accept="images/*"  value={images} />
 
-        <h4>Image</h4>
-        <div className="">
-          <label className="btn  ">
-            <input
-              className="form-control p-2"
-              onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
-          </label>
-        </div>
-      </div>
-      <div className='row m-auto'>
-        <div className='col-lg-6 col-md-6 col-sm-12'>
+      <div className="inputFields d-flex">
+        <div className="col-md-6 col-sm-12">
 
 
+                       <div className="productInput">
+                                    <label>Name</label>
+                                    <Input placeholder="Name"
+                                        onChange={handleChange('title')}
+                                        value={title}
+                                    />
 
-          <div className="">
-            <label className="text-muted">Name</label>
-            <input onChange={handleChange('name')} type="text" className="form-control" value={name} />
-          </div>
+                                </div>
 
-          <div className="">
-            <label className="text-muted">Description</label>
-            <textarea onChange={handleChange('description')} cols="30" rows="1" className="form-control" value={description} />
-          </div>
+                                <div className="productInput">
+                                    <label>Brand</label>
+                                    <Input
+                                        placeholder="Brand"
+                                        onChange={handleChange('brand')}
+                                        value={brand}
+                                        type="text"
+                                    />
 
-          <div className="">
-            <label className="text-muted">Price</label>
-            <input onChange={handleChange('price')} type="number" className="form-control" value={price} />
-          </div>
-        </div>
+                                </div>
 
-        <div className='col-lg-6 col-md-6 col-sm-12'>
-          <div className="">
-            <label className="text-muted">Category</label>
-            <select onChange={handleChange('category')} className="form-control">
-              <option>Please select</option>
-              {categories &&
-                categories.map((c, i) => (
-                  <option key={i} value={c._id}>
-                    {c.name}
-                  </option>
-                ))}
-            </select>
-          </div>
+                                <div className="productInput">
+                                    <label>Price</label>
+                                    <Input
+                                       onChange={handleChange('price')}
+                                        value={price}
+                                        type="number"
+                                    />
 
-          <div className="">
-            <label className="text-muted">Shipping</label>
-            <select onChange={handleChange('shipping')} className="form-control">
-              <option>Please select</option>
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </div>
-
-          <div className="">
-            <label className="text-muted">Quantity</label>
-            <input onChange={handleChange('quantity')} type="number" className="form-control" value={quantity} />
-          </div>
-        </div>
-      </div>
-      <div className="text-center mt-4 mb-3">
-            <button className="btn btn-outline-primary">Update Product</button>
+                                </div>
+                                 <div className="productInput">
+                                    <div className="productInput-category">
+                                        <label>Category</label>
+                                        <select onChange={handleChange('category')} className="form-control">
+                                            <option>Please select</option>
+                                            {categories &&
+                                                categories.map((c, i) => (
+                                                    <option key={i} value={c._id}>
+                                                        {c.name}
+                                                    </option>
+                                                ))}
+                                        </select>
+                                    </div>
             </div>
-        </form>
+
+                 <div className="col-md-6 col-sm-12">
+                <div className="productInput">
+                                    <label>Quantity</label>
+                                    <Input
+                                         onChange={handleChange('quantity')} 
+                                        value={quantity}
+                                        type="number"
+                                    />
+
+                                </div>
+                                <div className="productInput">
+
+
+                                    <label>Short Description</label>
+
+                                    <textarea 
+                                    style={{ width: '400px', height: '200px' }}
+                                        onChange={handleChange('short_description')}
+                                        value={short_description}
+
+                                    >
+
+                                    </textarea>
+
+
+                                </div>
+                                </div>
+                    </div>
+                </div>
+
+                        <div className="addProduct">
+                            <div className="des">
+
+                                <label>Description</label>
+
+                                <textarea
+                                    onChange={handleChange('description')} 
+                                    value={description}
+                                ></textarea>
+                            </div>
+                            <div className="addProductBtn">
+
+                                <button onClick={onSubmit}>Update Product</button>
+                            </div>
+                        </div>
+        </Form>
+        </div>
+    </div>
+      
+      
     );
 
     const showError = () => (
@@ -204,17 +265,19 @@ const UpdateProduct = ({ match }) => {
     };
 
     return (
-        <Layout title="Add a new product" description={`You Are Welcome ${user.name}, ready to add a new product?`}>
-            <div className="row">
-                <div className="container">
+        <div >
+          <Menu />
+            {/* <div className="row"> */}
+                
                     {showLoading()}
                     {showSuccess()}
                     {showError()}
                     {newPostForm()}
                     {redirectUser()}
-                </div>
-            </div>
-        </Layout>
+               
+            {/* </div> */}
+              <Footer />
+        </div>
     );
 };
 

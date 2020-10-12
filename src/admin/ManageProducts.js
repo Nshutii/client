@@ -38,7 +38,7 @@ const ManageProducts = () => {
         <Layout
             title="Manage Products"
             description="Perform CRUD on products"
-            className="container-fluid"
+            className="container-fluid mt-5"
         >
             <div className="row">
                 <div className="col-md-9 m-auto">
@@ -53,11 +53,11 @@ const ManageProducts = () => {
                                 className="list-group-item d-flex justify-content-between align-items-center"
                             >
                                 <strong>{p.title}</strong>
-                                {/* <Link to={`/admin/product/update/${p._id}`}>
+                                <Link to={`/admin/product/update/${p._id}`}>
                                     <span className="badge badge-warning badge-pill">
                                         Update
                                     </span>
-                                </Link> */}
+                                </Link>
                                 <span
                                 style={{cursor: 'pointer'}}
                                     onClick={() => destroy(p._id)}

@@ -103,7 +103,7 @@ const Shop = () => {
 
             <div className="shop-container ">
                 <div className="row mt-5" >
-                    <div className="col-lg-2 col-md-12 col-sm-12 mb-3 pl-2 catp">
+                    <div className="col-lg-2 col-md-2 col-sm-12 mb-3 pl-2 catp">
                         <h4>Categories</h4>
                         <div className='check-list'>
 
@@ -128,7 +128,7 @@ const Shop = () => {
                         </div>
                     </div>
 
-                    <div className="col-lg-10 col-md-9 col-sm-12">
+                    <div className="col-lg-10 col-md-10 col-sm-12 shop-prod">
                         <h2 className="mb-4 text-center">Products</h2>
                         <div className="row">
                             {filteredResults.map((product, i) => (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom';
 import { getCategories, list } from "./apiCore";
 import Card from "./UCard";
 // import Menu from './Menu'
@@ -49,6 +49,7 @@ const Search = () => {
     const searchSubmit = e => {
         e.preventDefault();
         searchData();
+        
     };
 
     const handleChange = name => event => {
@@ -56,9 +57,9 @@ const Search = () => {
     };
 
     const searchMessage = (searched, results) => {
-        if (searched && results.length > 0) {
-            return `Found ${results.length} products`;
-        }
+        // if (searched && results.length > 0) {
+        //     return `Found ${results.length} products`;
+        // }
         if (searched && results.length < 1) {
             return `No products found`;
         }
@@ -66,15 +67,15 @@ const Search = () => {
 
     const searchedProducts = (results = []) => {
         return (
-            <div className="row">
+            <div id='searchprod' className="row overlap searchedP">
                 <div className=" search-container  ">
-                    <h2 className="mt-4 mb-4">
+                    <h2 className="text-center">
                         {searchMessage(searched, results)}
                     </h2>
 
                     <div className="searchprod row" >
                         {results.map((product, i) => (
-                            <div key={i} className=" col-md-4 col-sm-12 mb-3">
+                            <div key={i} className=" col-md-3 col-sm-12 mb-3">
                                 <Card product={product} />
                             </div>
                         ))}
@@ -96,7 +97,7 @@ const Search = () => {
                     onChange={handleChange("search")}
                     placeholder="Search by name"
                 />
-                <Link to=''> <i className="fas fa-search" ></i></Link>
+                <Link to='' onClick={searchSubmit}> <i className="fas fa-search" ></i></Link>
 
 
             </div>
@@ -106,7 +107,7 @@ const Search = () => {
     );
 
     return (
-        <div >
+        <div className=" search-container  ">
             {/* <Menu /> */}
             <div>{searchForm()}</div>
             <div

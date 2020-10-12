@@ -5,27 +5,27 @@ import queryString from "query-string";
 
 export const getDailyProducts = (sortBy) => {
   return fetch(`${API}/getProducts?sortBy=${sortBy}&order=asc&limit=5`, {
-      method: "GET"
-    })
+    method: "GET"
+  })
     .then(response => {
       return response.json();
     })
     .catch(err => console.log(err));
 };
 
-export const getProducts = sortBy => {
-  return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=10`, {
-      method: "GET"
-    })
+export const getProducts = async (sortBy) => {
+  return await fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=10`, {
+    method: "GET"
+  })
     .then(response => {
       return response.json();
     })
     .catch(err => console.log(err));
 };
-export const getProductsBySell = sortBy => {
-  return fetch(`${API}/productBySell?sortBy=${sortBy}&order=desc&limit=6`, {
-      method: "GET"
-    })
+export const getProductsBySell = async (sortBy) => {
+  return await fetch(`${API}/productBySell?sortBy=${sortBy}&order=desc&limit=6`, {
+    method: "GET"
+  })
     .then(response => {
       return response.json();
     })
@@ -34,8 +34,8 @@ export const getProductsBySell = sortBy => {
 
 export const getCategories = () => {
   return fetch(`${API}/categories`, {
-      method: "GET"
-    })
+    method: "GET"
+  })
     .then(response => {
       return response.json();
     })
@@ -49,13 +49,13 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
     filters
   };
   return fetch(`${API}/products/by/search`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
     .then(response => {
       return response.json();
     })
@@ -68,8 +68,8 @@ export const list = params => {
   const query = queryString.stringify(params);
   console.log("query", query);
   return fetch(`${API}/products/search?${query}`, {
-      method: "GET"
-    })
+    method: "GET"
+  })
     .then(response => {
       return response.json();
     })
@@ -78,8 +78,8 @@ export const list = params => {
 
 export const read = productId => {
   return fetch(`${API}/product/${productId}`, {
-      method: "GET"
-    })
+    method: "GET"
+  })
     .then(response => {
       return response.json();
     })
@@ -88,8 +88,8 @@ export const read = productId => {
 
 export const listRelated = productId => {
   return fetch(`${API}/products/related/${productId}`, {
-      method: "GET"
-    })
+    method: "GET"
+  })
     .then(response => {
       return response.json();
     })
@@ -98,13 +98,13 @@ export const listRelated = productId => {
 
 export const getClientToken = (userId, token) => {
   return fetch(`${API}/getToken/${userId}`, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      }
-    })
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    }
+  })
     .then(response => {
       return response.json();
     })
@@ -113,14 +113,14 @@ export const getClientToken = (userId, token) => {
 
 export const processPayment = (userId, token, paymentData) => {
   return fetch(`${API}/braintree/payment/${userId}`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify(paymentData)
-    })
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(paymentData)
+  })
     .then(response => {
       return response.json();
     })
@@ -129,16 +129,16 @@ export const processPayment = (userId, token, paymentData) => {
 
 export const createOrder = (userId, token, createOrderData) => {
   return fetch(`${API}/order/create/${userId}`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
-      },
-      body: JSON.stringify({
-        order: createOrderData
-      })
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      order: createOrderData
     })
+  })
     .then(response => {
       return response.json();
     })

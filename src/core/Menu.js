@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
+// import Mailto from 'react-mailto';
 import { signout, isAuthenticated } from "../auth";
 import { itemTotal } from "./cartHelpers";
-import img1 from '../img/11.2 shopping-bag.svg.svg'
+import img1 from '../img/11.2 shopping-bag.svg.svg';
+import img2 from '../img/shopping-cart.svg';
 import Search from './Search'
 import logo from '../img/logo.jpg'
 
@@ -14,8 +16,31 @@ const isActive = (history, path) => {
     }
 };
 
-const Menu = ({ history }) => (
-    <div className="what">
+const Menu = ({ history }) =>{
+     const refreshPage = () => {
+    window.location.reload(false);
+    window.location.pathname = '/'
+   
+  } 
+     const refreshAboutPage = () => {
+    window.location.reload(false);
+    window.location.pathname = '/about'
+   
+  } 
+     const refreshFaqPage = () => {
+    window.location.reload(false);
+    window.location.pathname = '/faq'
+   
+  } 
+     const refreshContactPage = () => {
+    window.location.reload(false);
+    window.location.pathname = '/contact'
+   
+  } 
+  
+return (
+    
+   <div className="what">
         <div className="fix">
 
             <a href="https://wa.me/message/SJKXVM2EKVS7E1" target="_blank" title="Contact Us"><i className="fab fa-whatsapp"></i></a>
@@ -29,10 +54,19 @@ const Menu = ({ history }) => (
                     <section className="header-info">
                         <div className="header-info-text">
                             <ul>
-                                <li> <i className="fab fa-whatsapp"></i>
-                                    <a href="https://wa.me/message/SJKXVM2EKVS7E1" target="_blank">+250 727 311 429</a></li>
-                                <li><i className="far fa-envelope"></i><a href="mailto:kigaliphones@gmail.com">kigaliphones@gmail.com</a></li>
-                                <li><Link to="/"><img src={logo} alt="" /></Link></li>
+                                <li><i className="fab fa-whatsapp"></i>
+                                 <a href="https://wa.me/message/SJKXVM2EKVS7E1" target="_blank">+250 727 311 429</a></li>
+
+                                <li><i className="far fa-envelope"></i>
+                                
+                                  <a href="mailto:kigaliphones@gmail.com" >
+                                
+                                kigaliphones@gmail.com
+                                
+                                 </a>
+                                
+                                </li>
+                                <li><Link to="/"><img src={logo} alt=""/></Link></li>
                             </ul>
                         </div>
                         <div className="header-info-list">
@@ -43,6 +77,7 @@ const Menu = ({ history }) => (
                                     <Link
                                         style={isActive(history, "/about")}
                                         to="/about"
+                                        onClick={refreshAboutPage}
                                     >
                                         <i className="far fa-address-card"></i>
 
@@ -59,6 +94,7 @@ const Menu = ({ history }) => (
 
                                         style={isActive(history, "/faq")}
                                         to="/faq"
+                                         onClick={refreshFaqPage}
                                     >
                                         <i className="far fa-address-book"></i>
 
@@ -75,6 +111,7 @@ const Menu = ({ history }) => (
 
                                         style={isActive(history, "/contact")}
                                         to="/contact"
+                                         onClick={refreshContactPage}
                                     >
                                         <i className="fas fa-mobile-alt"></i>
 
@@ -95,6 +132,7 @@ const Menu = ({ history }) => (
 
                                             style={isActive(history, "/user/dashboard")}
                                             to="/user/dashboard"
+
                                         >
                                             <i className="far fa-user"></i> Account
                     </Link>
@@ -154,7 +192,6 @@ const Menu = ({ history }) => (
                                 )}
                             </ul>
                         </div>
-
                     </section>
                 </header>
 
@@ -165,10 +202,12 @@ const Menu = ({ history }) => (
         <div className="content-wrapper">
             <nav className="navigation">
                 <div className="navigation-logo">
-                    <Link to="/">
+                    <Link to='/'  onClick={refreshPage} >
 
-                        <img src={logo} alt="" />
-
+              
+                       <img   src={logo} alt=""/>
+        
+         
                     </Link>
                 </div>
 
@@ -178,12 +217,12 @@ const Menu = ({ history }) => (
                 <div className="navigation-links">
 
 
-
                     <ul className="icons">
                         <li>  <Link to="/" >Home</Link> </li>
-                        <li>  <Link title="Shop"
+                        {/* <li>  <Link to="/" onClick={refreshPage}>Home</Link> </li>  */}
+                      <li>  <Link title="Shop"
                             style={isActive(history, "/shop")}
-                            to="/shop" ><i className="fas fa-shopping-cart"></i> <span>Shop</span></Link> </li>
+                            to="/shop" > <img src={img1} alt="" /></Link> </li>
                         <li> <Link to="/wishlist" title="WishList"><i className="far fa-heart"></i></Link></li>
 
 
@@ -194,7 +233,8 @@ const Menu = ({ history }) => (
                                 to="/cart"
                                 title="Cart"
                             >
-                                <img src={img1} alt="" />
+                                <img src={img2} alt="" />
+                                
                                 <sup> <span className='item-count '>{itemTotal()}</span></sup>
                             </Link>
                         </li>
@@ -204,5 +244,5 @@ const Menu = ({ history }) => (
         </div>
     </div>
 );
-
+}
 export default withRouter(Menu);

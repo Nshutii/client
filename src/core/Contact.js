@@ -45,7 +45,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="wrapper">
-            <div className="form">
+            <div className="form mb-5">
               <form method="POST" action="https://formspree.io/kigaliphones@gmail.com" className="contact-form">
                 <div className="title">
                   <h1>Get In Touch</h1>
@@ -55,10 +55,10 @@ const Contact = () => {
             varius nunc</p>
                 </div>
                 <div className="input-fields">
-                  <input type="text" className="input" placeholder="Name" />
-                  <input type="text" className="input" placeholder="Email Address" /> <br />
-                  <input type="text" className="input" placeholder="Phone" />
-                  <input type="text" className="input" placeholder="Subject" />
+                  <input type="text" className="input" placeholder="Name" required />
+                  <input type="text" className="input" placeholder="Email Address" required/> <br />
+                  <input type="text" className="input" placeholder="Phone" required />
+                  <input type="text" className="input" placeholder="Subject" required />
                 </div>
                 <div className="msg">
                   <textarea placeholder="Message"></textarea>

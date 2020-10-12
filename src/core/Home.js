@@ -301,7 +301,7 @@ const addToWishlist = () => {
       <a id="button" title="Back To Top"></a>
       <Menu />
 
-      <div className="main-home">
+      <div className="main-home" >
 
         <section className='slider-info'>
           <div className="slide-container">

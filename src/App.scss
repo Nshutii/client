@@ -63,24 +63,24 @@ body {
   Navbar Starts Here
 ////////////////*/
   
-  .what .fix{
-    position: fixed;
-    top: 90%;
-    right:15% ;
-    z-index: 99;
-    a{
-    
-    color:#25d366;
-    width: 10rem;
-    height: 10rem;
+.what .fix{
+  position: fixed;
+  top: 90%;
+  right: 2% ;
+  z-index: 99;
+  a{
+  
+  color:#25d366;
+  width: 10rem;
+  height: 10rem;
 
-    i{
-     
-      font-size: 5rem;
-    }
-    }
-    
+  i{
+   
+    font-size: 5rem;
   }
+  }
+  
+}
 // start of the header section
 .horizontal-line {
   border-bottom: 0.1px solid #cad5d5;
@@ -219,26 +219,28 @@ body {
 
 .content-wrapper {
   border-bottom: 0.1px solid #cad5d5;
-
+  z-index: 6;
   padding: 0 10rem;
-  // background: #fed700;
-
+  height: 8.5rem;
   .navigation {
-    padding: 1rem 0rem;
+    margin: 1rem 0;
     display: flex;
     justify-content: space-between;
-
-    // padding: 0rem;
+    z-index: 6;
+    padding: 0 6rem;
 
     &-logo {
       // margin-top: 0rem;
 
 
       a {
+        z-index: 10;
+
         img {
           width: 7rem;
-          height: 7rem;
+          height: 6rem;
           border-radius: 2.5rem;
+
         }
       }
     }
@@ -252,9 +254,7 @@ body {
         height: 4.4rem;
         padding: 1.3rem 3rem;
         border: 2px solid #fed700;
-        // border: 1px solid #333E48;
         outline: #fed700;
-        outline: #333E48;
         border-top-left-radius: 2rem;
         border-bottom-left-radius: 2rem;
         position: relative;
@@ -271,12 +271,13 @@ body {
 
       }
 
+
+
       a {
         position: absolute;
         width: 5rem;
         height: 4.4rem;
         background-color: #fed700;
-        // background-color:#fff ;
         border-top-right-radius: 2rem;
         border-bottom-right-radius: 2rem;
         outline: none;
@@ -400,7 +401,7 @@ body {
 ////////////////*/
 
 .main-home {
-  padding: 0 10rem;
+  padding: 0 8rem;
   background-color: #f5f5f5;
   position: relative;
   clear: both;
@@ -550,6 +551,14 @@ body {
 }
 
 //end of  categories styles
+.searchedP {
+  position: absolute;
+  background: #fff;
+  width: 1283px;
+  margin: 0.5rem -14rem 0 !important;
+  padding: 1rem;
+  z-index: 5;
+}
 
 //slider styles
 
@@ -812,6 +821,8 @@ body {
         height: 3.6rem;
         align-items: flex-start;
         overflow: hidden;
+        white-space: nowrap;
+          text-overflow: ellipsis;
 
         a {
           width: 100%;
@@ -820,8 +831,7 @@ body {
           color: #333e48;
           font-weight: 600;
           font-size: 1.4rem;
-          white-space: wrap;
-          text-overflow: ellipsis;
+          
         }
       }
 
@@ -928,14 +938,17 @@ body {
     }
   }
 }
-
 .search-container {
+  width: 100%;
+  margin-left: 0;
+
   .searchprod {
     width: 100%;
     // height: 60rem;
     // display: flex;
     // justify-content: space-between;
   }
+
 
   .product-card-container {
 
@@ -1984,6 +1997,8 @@ body {
       .product-description {
         width: 20rem;
         height: 14rem;
+        padding: .5rem 1rem;
+         
 
 
 
@@ -2009,6 +2024,9 @@ body {
           width: 100%;
           height: 3.6rem;
           overflow: hidden;
+          white-space: nowrap;
+            /* Don't forget this one */
+            text-overflow: ellipsis;
 
           a {
             width: 100%;
@@ -2017,8 +2035,11 @@ body {
             color: #333e48;
             font-weight: 600;
             font-size: 1.4rem;
-            white-space: wrap;
-            text-overflow: ellipsis;
+            // white-space: wrap;
+            // text-overflow: ellipsis;
+            // padding:.5rem 1rem;
+            // margin-bottom: .5rem;
+
           }
         }
 
@@ -4448,7 +4469,10 @@ about Ends Here
     //     }
     //   }
   }
-
+  .addToButtons {
+    display: flex;
+    flex-direction: column;
+  }
   .slider-info {
     width: 100%;
   }
@@ -5731,7 +5755,10 @@ about Ends Here
 
 
   }
-
+  .addToButtons {
+    display: flex;
+    flex-direction: column;
+  }
   .productPage-description {
     margin-top: 10rem;
   }
@@ -6618,10 +6645,10 @@ about Ends Here
     }
   }
 
-  // .addToButtons {
-  //   display: flex;
-  //   flex-direction: column;
-  // }
+  .addToButtons {
+    display: flex;
+    flex-direction: column;
+  }
 
   .content-wrapper {
     nav.navigation {
@@ -8436,6 +8463,14 @@ about Ends Here
       width: 200px;
       height: 140px;
     }
+  }
+  .searchedP {
+
+    width: 580px;
+    margin: 1rem -0.8rem 0 !important;
+    padding: 2rem auto;
+    z-index: 5;
+    align-items: center;
   }
 
   .addToButtons {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import { InstagramEmbed } from 'react-instagram-embed';
+import InstagramEmbed from 'react-instagram-embed';
 import img1 from '../img/1.jpg'
 import img2 from '../img/2.jpg'
 import ceo from '../img/ceo.jpg'
@@ -55,10 +55,21 @@ const Footer = () => {
               </ul>
             </div> */}
             <div className="insta-posts">
-              <h3>Our Instagram Posts</h3>
+              <h3>Our Instagram Account</h3>
               <div className="images overflow-auto">
 
-
+                <InstagramEmbed className="image" url='https://www.instagram.com/p/CFJnLLwB_0z/'
+                  // maxWidth={500}
+                  // maxHeight={200}
+                  hideCaption={true}
+                  containerTagName='div'
+                  protocol=''
+                  injectScript
+                  onLoading={() => { }}
+                  onSuccess={() => { }}
+                  onAfterRender={() => { }}
+                  onFailure={() => { }}
+                />
 
               </div>
 

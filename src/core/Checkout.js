@@ -117,26 +117,26 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
     const showDropIn = () => (
         <div onBlur={() => setData({ ...data, error: '' })}>
             {data.clientToken !== null && products.length > 0 ? (
-                <div className="deliveryInputs ">
+                <form className="deliveryInputs ">
 
                     <div className="deliverys mt-4">
-                        <input onChange={handleDistrict} value={data.district} type="text" placeholder='District' />
-
-                    </div>
-                    <div className="deliverys mt-4">
-                        <input onChange={handleSector} value={data.sector} type="text" placeholder='Sector' />
+                        <input onChange={handleDistrict} value={data.district} type="text" placeholder='District' required />
 
                     </div>
                     <div className="deliverys mt-4">
-                        <input onChange={handleCell} value={data.cell} type="text" placeholder='Cell' />
+                        <input onChange={handleSector} value={data.sector} type="text" placeholder='Sector' required />
 
                     </div>
                     <div className="deliverys mt-4">
-                        <input onChange={handleVillage} value={data.village} type="text" placeholder='Village' />
+                        <input onChange={handleCell} value={data.cell} type="text" placeholder='Cell' required />
 
                     </div>
                     <div className="deliverys mt-4">
-                        <input onChange={handlePhone} value={data.phone} type="phone" placeholder='Phone' />
+                        <input onChange={handleVillage} value={data.village} type="text" placeholder='Village' required />
+
+                    </div>
+                    <div className="deliverys mt-4">
+                        <input onChange={handlePhone} value={data.phone} type="phone" placeholder='Phone' required />
 
                     </div>
 
@@ -148,6 +148,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                             className="form-control"
                             value={data.address}
                             placeholder="Type your delivery address here..."
+                            required
                         />
                     </div>
 
@@ -155,7 +156,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                     <button onClick={buy} className="deliveryBtn mb-5">
                         Order Now
                     </button>
-                </div>
+                </form>
             ) : null}
         </div>
     );
