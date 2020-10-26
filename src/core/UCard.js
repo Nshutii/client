@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './Tools/ShowImage';
 import moment from 'moment';
-import { addItem,addWishlistItem, updateItem, removeItem } from './cartHelpers';
+import { addItem, addWishlistItem, updateItem, removeItem } from './cartHelpers';
 
 const Card = ({
   product,
@@ -60,7 +60,7 @@ const Card = ({
     return (
       showAddToWishlistButton && (
         <button onClick={addToWishlist} id='bt'
-         className="btn btn-outline-secondary mt-2 mb-2">Add to WishList</button>
+          className="btn btn-outline-secondary mt-2 mb-2">Add to WishList</button>
       )
     );
   };

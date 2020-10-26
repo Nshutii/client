@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 import ProductImage from './Sections/ProductImage';
 import ProductInfo from './Sections/ProductInfo';
 import { Link, Redirect } from 'react-router-dom';
-import { addItem,addWishlistItem } from './cartHelpers';
+import { addItem, addWishlistItem } from './cartHelpers';
 import { read, listRelated } from './apiCore';
 import Card from './UCard';
 import img from '../img/kpc_3.jpg';
@@ -80,54 +80,54 @@ const Product = (props, { product }) => {
   };
   return (
     <div>
-    <Menu />
-    <div   className=" productPage">
+      <Menu />
+      <div className=" productPage">
 
 
-      <div className=" productPage-sections " >
-        <div className='sectionOne ' >
-          <ProductImage detail={Product} />
-        </div>
-        <div className='sectionTwo  '>
-          <ProductInfo
-            detail={Product} />
-             <div className="addToButtons">
-          <div className="addToCart-button mb-3">
-          <Link to='/cart' onClick={addToCart} id='bt'>Add to cart</Link>
+        <div className=" productPage-sections " >
+          <div className='sectionOne ' >
+            <ProductImage detail={Product} />
           </div>
-          <div className="addToWishlist-button">
-                    <Link to='/wishlist' onClick={addToWishlist} id='bt'>Add to Wishlist</Link>
-          </div>
-         
+          <div className='sectionTwo  '>
+            <ProductInfo
+              detail={Product} />
+            <div className="addToButtons">
+              <div className="addToCart-button mb-3">
+                <Link to='/cart' onClick={addToCart} id='bt'>Add to cart</Link>
+              </div>
+              <div className="addToWishlist-button">
+                <Link to='/wishlist' onClick={addToWishlist} id='bt'>Add to Wishlist</Link>
+              </div>
+
             </div>
+          </div>
         </div>
-      </div>
-      <div className="productPage-description ">
-        <div className="description-header">
-          <div className="description-title">  <h2>Product Description</h2> </div>
-        </div>
-        <p> {Product.description}</p>
+        <div className="productPage-description ">
+          <div className="description-header">
+            <div className="description-title">  <h2>Product Description</h2> </div>
+          </div>
+          <p> {Product.description}</p>
 
-      </div>
-     
-      <div className="relatedPart">
-        <div className="relatedPart-header">
-          <div className="relatedPart-title">  <h2>Related products</h2> </div>
         </div>
-        <div className="relatedProducts related-container">
-          <div className="row">
+
+        <div className="relatedPart">
+          <div className="relatedPart-header">
+            <div className="relatedPart-title">  <h2>Related products</h2> </div>
+          </div>
+          <div className="relatedProducts related-container">
+
             {relatedProduct.map((p, i) => (
-                <div key={i} className=" col-md-3 col-sm-12 mb-3">
+              <div key={i}>
 
                 <Card className="card" product={p} />
               </div>
             ))}
+
+
           </div>
-         
         </div>
       </div>
-   </div>
- <Footer />
+      <Footer />
     </div>
   )
 

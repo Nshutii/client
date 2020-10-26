@@ -37,6 +37,7 @@ $box_shadow_two: 0px 10px 20px rgba(43, 20, 11, 0.315);
 html {
   font-size: 62.5%;
   position: relative;
+  overflow-x: hidden;
 }
 
 body {
@@ -66,8 +67,9 @@ body {
 .what .fix{
   position: fixed;
   top: 90%;
-  right: 2% ;
+  right: 10% ;
   z-index: 99;
+  
   a{
   
   color:#25d366;
@@ -1003,6 +1005,8 @@ body {
         height: 3.6rem;
         align-items: flex-start;
         overflow: hidden;
+        white-space: nowrap;
+          text-overflow: ellipsis;
 
         a {
           width: 100%;
@@ -1011,8 +1015,7 @@ body {
           color: #333e48;
           font-weight: 600;
           font-size: 1.4rem;
-          white-space: wrap;
-          text-overflow: ellipsis;
+          
         }
       }
 
@@ -1123,13 +1126,39 @@ body {
 .shop-container {
   padding: 0rem 10rem;
 
+  .row{
+    display: flex;
+    h2{
+      z-index: 9;
+      height: 3rem;
+      text-align: center;
+      // margin:2rem auto;
+    }
+  }
+
+  .catp{
+    display: block;
+  }
+
+
+  .shop-prod .row{
+    margin-left: 2rem;
+    // margin: 2rem 3rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    
+  }
+
   .product-card-container {
 
-    width: 34rem;
-    height: 20rem;
+    width: 24rem;
+    height: 37rem;
     padding: 1rem;
-    display: flex;
-    justify-content: space-between;
+    margin-right: 0rem;
+    // display: flex;
+    // justify-content: space-between;
     // border: #FED700 solid 1px;
     border-right: 0.00000000001rem solid #cad5d5;
 
@@ -1150,12 +1179,13 @@ body {
     .product-description {
       width: 18rem;
       height: 14rem;
-      padding: 0 1rem;
+      padding: 0rem 0rem;
 
 
 
       .product-border {
-        padding-right: 1.6rem;
+        // padding-right: 1.6rem;
+        padding-right: 0rem;
         // height: 14rem;
 
 
@@ -1176,6 +1206,8 @@ body {
         height: 3.6rem;
         align-items: center;
         overflow: hidden;
+        white-space: nowrap;
+          text-overflow: ellipsis;
 
         a {
           width: 100%;
@@ -1184,8 +1216,7 @@ body {
           color: #333e48;
           font-weight: 600;
           font-size: 1.4rem;
-          white-space: wrap;
-          text-overflow: ellipsis;
+          
         }
       }
 
@@ -1370,12 +1401,9 @@ body {
     width: 100%;
 
     .daily-product {
-      background-color: #fff;
-
       margin-top: 2rem;
       padding: 0.8rem;
       // width: 23.2rem;
-      width: 22.2rem;
       position: relative;
       height: 35rem;
       // overflow: hidden;
@@ -1912,7 +1940,10 @@ body {
 .best-sellers {
   margin-bottom: 2rem;
   padding: 0rem 10rem;
+  height: 42rem;
+  overflow: hidden;
   margin-top: 2rem;
+  width: 100%;
 
   .sellers-header {
     border-bottom: 0.000001px solid #cad5d5;
@@ -1940,6 +1971,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    width:100%;
 
     .product-item:nth-child(3),
     .product-item:nth-child(6) {
@@ -1950,7 +1982,8 @@ body {
 
     .product-item {
       display: flex;
-      width: 38.3rem;
+      // width: 38.3rem;
+      // width: 37rem;
       height: 17.2rem;
       justify-content: space-between;
       margin-bottom: 1rem;
@@ -1997,7 +2030,8 @@ body {
       .product-description {
         width: 20rem;
         height: 14rem;
-        padding: .5rem 1rem;
+        // padding: .5rem 1rem;
+        padding: 0rem;
          
 
 
@@ -2215,12 +2249,16 @@ body {
 
     .logo {
       margin-top: 2rem;
-      width: 30rem;
+      width: 15rem;
       height: 15rem;
 
       img {
         width: 100%;
         height: 100%;
+
+        &:hover{
+          opacity: .5;
+        }
       }
     }
   }
@@ -2384,6 +2422,8 @@ body {
     }
   }
 
+  
+
   .productPage-description {
     .description-header {
       border-bottom: 0.000001px solid #cad5d5;
@@ -2470,6 +2510,7 @@ body {
   }
 
   .relatedPart {
+    width: 100%;
     .relatedPart-header {
       border-bottom: 0.000001px solid #cad5d5;
 
@@ -2493,26 +2534,222 @@ body {
     }
 
     .relatedProducts {
-      width: 100%;
-      display: flex;
+      // width: 100%;
+      // display: flex;
       // justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-rows: repeat(1, 1fr);
+    width:100%;
+
+    div{
+      // width: 100%;
+      margin-right: 0rem;
+      
+
+      #bt.product-card-container{
+
+     display: flex;
+      // width: 37rem;
+      height: 17.2rem;
+      justify-content: space-between;
+      margin: 0rem 0rem 1rem 0rem;
+      width: 38.3rem;
+      // width: 100%;
+
+      padding: 0rem;
+      // border: none;
+      border-left: none;
+
+      &:hover {
+        overflow: hidden;
+        z-index: 99;
+        -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+        -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+        box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+
+        & .product-description .price-container {
+          border-bottom: 0.00000000001rem solid #cad5d5;
+          padding-bottom: 4rem;
+          // padding-right: 1.6rem;
 
 
-      .card {
-        width: 30rem;
+        }
+
+        & .product-description .product-border {
+          border: none;
+        }
+
+        .product-description .hover-container {
+          visibility: visible;
+          // margin-bottom: -6rem;
+        }
+
       }
 
-      .imgPart {
-        width: 70rem;
-        margin-top: 3rem;
-        margin-left: 1rem;
+
+
+
+      .product-image {
+        width: 15rem !important;
+        height: 14rem;
 
         img {
           width: 100%;
-          height: 50rem;
-          padding-top: 3rem;
+          height: 100%;
         }
       }
+
+
+
+      .product-description {
+        width: 20rem;
+        height: 14rem;
+        // padding: .5rem 1rem;
+        padding: 0rem;
+         
+
+
+
+        .product-border {
+          // border-right: 0.00000000001rem solid #cad5d5;
+          padding-right: 1.6rem;
+          // height: 14rem;
+
+
+        }
+
+     
+
+        .product-category {
+          margin-top: 1rem;
+
+          a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #878787;
+          }
+        }
+
+        .product-name {
+          width: 100%;
+          height: 3.6rem;
+          overflow: hidden;
+          white-space: nowrap;
+            /* Don't forget this one */
+            text-overflow: ellipsis;
+
+          a {
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: #333e48;
+            font-weight: 600;
+            font-size: 1.4rem;
+            // white-space: wrap;
+            // text-overflow: ellipsis;
+            // padding:.5rem 1rem;
+            // margin-bottom: .5rem;
+
+          }
+        }
+
+        .price-container {
+          width: 18.7rem;
+          height: 6rem;
+          text-align: center;
+          // display: flex;
+          justify-content: space-between;
+          padding-top: 2rem;
+          margin-bottom: 1rem;
+
+
+          .view-price {
+            font-size: 2rem;
+            color: #343f49;
+          }
+
+          .add-to-cart {
+            margin-right: 1rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            padding-top: 0.4rem;
+            margin-top: -0.6rem;
+            background: #fed700;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all ease-in 0.1s;
+
+            &:hover {
+              margin-top: -0.8rem;
+            }
+
+
+            i {
+              // width:2rem ;
+              // height:2rem ;
+              font-size: 1.8rem;
+              color: #f5f5f5;
+              text-align: center;
+              padding: 0.4rem 0.6rem;
+            }
+          }
+        }
+
+        .hover-container {
+          padding-right: 1.6rem;
+          font-size: 1.3rem;
+          text-decoration: none;
+          display: flex;
+          justify-content: space-between;
+          // padding-top: 1rem;
+          visibility: hidden;
+          margin-bottom: 2rem;
+
+
+
+
+          .add-to-compare,
+          .add-to-wishlist {
+
+            a {
+
+              &:hover {
+                color: #fed700;
+              }
+
+              i {
+                padding-right: 0.5rem;
+              }
+
+              text-decoration: none;
+              color: #848484;
+
+            }
+          }
+        }
+      }
+
+}
+    }
+
+
+
+      // .card {
+      //   width: 30rem;
+      // }
+
+      // .imgPart {
+      //   width: 70rem;
+      //   margin-top: 3rem;
+      //   margin-left: 1rem;
+
+      //   img {
+      //     width: 100%;
+      //     height: 50rem;
+      //     padding-top: 3rem;
+      //   }
+      // }
     }
   }
 }
@@ -4319,8 +4556,313 @@ about Ends Here
   @media queries Here
 ////////////////*/
 @media only screen and (max-width: 1268px) {
+  .horizontal-line {
+  border-bottom: 0.1px solid #cad5d5;
+  // padding: 0 6rem;
+  width: 100%;
+  // background-color: #fed700;
+
+  .containerNav {
+    padding: 0 5rem;
+
+    header {
+
+
+      a {
+        text-decoration: none;
+        // color: #334141;
+          color: #7c7c7c;
+
+
+
+
+      }
+
+      .header-info {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        // & > a{
+        //     position: absolute;
+        //     // width: 20rem;
+        //   // height: 20rem;
+
+        //  i{
+        //     position: absolute;
+        //   top: 0;
+        //   left: 800px;
+        //   font-size:20rem;
+        //  }
+        // }
+
+
+
+        &-text {
+          color: #7c7c7c;
+          font-size: 1.3rem;
+
+
+
+          ul {
+            display: flex;
+
+            li {
+              padding-right: 3rem;
+              list-style: none;
+              transition: all 0.2s;
+                
+
+              
+          &:first-child{
+            color:#7c7c7c;
+          }
+
+              &:last-child {
+                display: none;
+              }
+
+
+
+              i {
+                color: #fed700;
+                padding-right: 0.5rem;
+              }
+
+              &:hover {
+                color: #334141;
+              }
+            }
+          }
+        }
+
+        &-list ul {
+          color: #334141;
+          font-size: 1.3rem;
+          width: 55rem;
+          height: 2rem;
+          display: flex;
+          justify-content: flex-end;
+          list-style: none;
+
+          li {
+
+            border-right: 0.1px solid #cad5d5;
+            padding: 0 1.5rem;
+
+
+            &:last-child {
+              border: none;
+            }
+
+
+
+            &:hover {
+              cursor: pointer;
+
+            }
+
+            i {
+              padding-right: 0.5rem;
+            }
+
+            .or {
+              padding: 0rem .5rem;
+              color: #fed700;
+            }
+
+            a {
+              transition: all 0.2s;
+              color: #333e48;
+
+
+              &:hover {
+                color: #7c7c7c;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  
+.content-wrapper {
+  border-bottom: 0.1px solid #cad5d5;
+  z-index: 6;
+  padding: 0 5rem;
+  height: 8.5rem;
+  .navigation {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 6;
+    padding: 0 0rem;
+
+    &-logo {
+      // margin-top: 0rem;
+
+
+      a {
+        z-index: 10;
+
+        img {
+          width: 7rem;
+          height: 6rem;
+          border-radius: 2.5rem;
+
+        }
+      }
+    }
+
+    &-search {
+      margin-top: 1rem;
+      margin-left: 22rem;
+
+      input {
+        width: 43.6rem;
+        height: 4.4rem;
+        padding: 1.3rem 3rem;
+        border: 2px solid #fed700;
+        outline: #fed700;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        position: relative;
+
+        &::placeholder {
+          font-size: 1.4rem;
+          font-weight: 500;
+
+        }
+
+        &:focus {
+          font-size: 1.3rem;
+        }
+
+      }
+
+
+
+      a {
+        position: absolute;
+        width: 5rem;
+        height: 4.4rem;
+        background-color: #fed700;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        outline: none;
+        border: none;
+
+        i {
+          padding: 1.6rem 0.8rem 0 0.8rem;
+          text-align: center;
+          font-size: 1.5rem;
+          width: 100%;
+          color: #000;
+          position: absolute;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &-links {
+
+      li:first-child a {
+        display: none;
+      }
+
+      display: flex;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        color: #7c7c7c;
+        transition: all 0.2s;
+
+
+
+        &:hover {
+          color: #334141;
+        }
+      }
+
+      ul {
+        font-size: 1.4rem;
+        display: flex;
+
+        list-style: none;
+
+        li {
+          padding: 2rem;
+
+          a {
+            i.fas {
+              // visibility: visible;
+              // display: none;
+              color: #334141;
+            }
+
+            span {
+              //   // visibility: hidden;
+              display: none;
+
+            }
+          }
+
+
+          &:last-child {
+            padding-right: 7rem;
+          }
+
+
+        }
+
+
+      }
+
+      & .icons {
+        li {
+
+          padding: 2rem 1.5rem;
+
+          img {
+            width: 2.2rem;
+            color: #222831;
+
+            & a[title] {
+              border-radius: 2rem;
+              color: red;
+            }
+
+
+          }
+
+          .item-count {
+            font-size: 1.9rem;
+            font-weight: 600;
+          }
+
+          &:last-child {
+            padding-right: 2rem;
+
+          }
+
+          i {
+            // color: #6a6a6b;
+            color: #222831;
+            font-size: 2.2rem;
+          }
+        }
+      }
+    }
+  }
+}
   .main-home {
-    padding: 0 10rem;
+    padding: 0 5rem;
     background-color: #f5f5f5;
     position: relative;
     clear: both;
@@ -4479,7 +5021,7 @@ about Ends Here
 
   .slide-container {
     margin: 1rem;
-    width: 80rem;
+    width: 90rem;
     // min-width: 70vw;
 
     height: 410px;
@@ -4560,6 +5102,7 @@ about Ends Here
       border-radius: .5rem;
       margin: 1rem 1rem 1rem 1rem;
       width: 25.3%;
+      height: 90%;
       border-right: 1px solid #cad5d5;
       background-color: orange;
       // margin-left: 0.4rem;
@@ -4600,7 +5143,7 @@ about Ends Here
 
   .ads-bar {
     height: 65.1rem;
-    width: 37.4rem;
+    width: 100%;
     // max-width: 30vw;
 
     background: #fff;
@@ -4612,7 +5155,7 @@ about Ends Here
       width: 100%;
       // background: orange;
       border-radius: .5rem;
-      margin: 1rem 1rem 1rem 1rem;
+      margin: 1rem 0rem 0rem 0rem;
       background: #fff;
     }
 
@@ -4957,12 +5500,17 @@ about Ends Here
     }
   }
 
+  .big-ad1-container,.big-ad4,.big-ad2-container{
+    padding: 0rem 5rem;
+  }
+
 
 
   .best-sellers {
     margin-bottom: 2rem;
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
     margin-top: 2rem;
+    width: 100%;
 
     .sellers-header {
       border-bottom: 0.000001px solid #cad5d5;
@@ -5003,7 +5551,8 @@ about Ends Here
       .product-item {
         display: flex;
         // width: 33.3%;
-        width: 35.6rem;
+        // width:100%;
+        // width: 35.6rem;
         height: 17.2rem;
         justify-content: space-between;
         margin-bottom: 1rem;
@@ -5036,8 +5585,8 @@ about Ends Here
 
 
         .product-image {
-          width: 10rem;
-          height: 10rem;
+          width: 15rem;
+          height: 14rem;
 
           img {
             width: 100%;
@@ -5050,6 +5599,7 @@ about Ends Here
         .product-description {
           width: 17rem;
           height: 14rem;
+          padding: 0rem;
 
 
 
@@ -5175,7 +5725,7 @@ about Ends Here
     margin-bottom: -43rem;
 
     .trust-content {
-      padding: 0rem 10rem;
+      padding: 0rem 5rem;
       display: flex;
       justify-content: space-between;
 
@@ -5509,6 +6059,598 @@ about Ends Here
       }
     }
   }
+
+  .daily-deals {
+  background-color: #fff;
+
+  padding: 0rem 5rem;
+  // margin-top: 4rem;
+  height: 50rem;
+  width: 100%;
+
+  .daily-deals-header {
+    display: flex;
+    border-bottom: 0.000001px solid #cad5d5;
+
+    .daily-deals-title {
+      line-height: 1;
+      // font-size: 2.2rem;
+      color: #333e48;
+      // font-weight: 600;
+
+      width: 18.1rem;
+      border-bottom: 3px solid #fed700;
+      margin-right: 2rem;
+      margin-bottom: -0.1rem;
+      padding-top: 1rem;
+
+      h3 {
+        padding-bottom: 1rem;
+        font-size: 2.2rem;
+        font-weight: 500;
+
+      }
+
+    }
+
+    .countdown {
+      display: none;
+
+      padding: 0.7rem 4rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+      background: #fed700;
+      border-radius: 10rem;
+      margin-bottom: 1rem;
+
+    }
+  }
+
+  // daily deals product
+  .slider {
+    // //   // width: 24rem;
+    //   // height: 24rem;
+    // width: inherit;
+    // height: 40rem;
+    // // padding: 0rem 5rem;
+    // // height: 100%;
+    // // z-index: 999;
+    // // height: 40rem !important;
+
+    // z-index: 99;
+
+    // display: flex;
+    // justify-content: space-between;
+
+    ul {
+      list-style: none;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+
+    .daily-product {
+      margin-top: 2rem;
+      padding: 0.8rem;
+      // width: 23.2rem;
+      position: relative;
+      height: 35rem;
+      // overflow: hidden;
+
+      &:nth-child(5),
+      &:nth-child(10) {
+        .product-info-container {
+          border: none;
+        }
+      }
+
+      &:nth-child(3),
+      &:nth-child(6) {
+        .product-info-container {
+          border-right: 0.00000000001rem solid #cad5d5;
+        }
+      }
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        padding-bottom: 0rem;
+      }
+
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10) {
+        margin-top: 0rem;
+      }
+
+
+
+      &:hover {
+        // border-radius: 0.5rem;
+        height: 35rem;
+        -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+        -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+        box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+
+        // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+        // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+        // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+        .product-info-container {
+          border: none;
+        }
+
+        .price-container {
+          border-bottom: 0.1px solid #cad5d5;
+
+
+        }
+
+        .price-container .view-price {
+          margin-bottom: 2rem;
+
+        }
+
+        .hover-container {
+          visibility: visible;
+          // position: relative;
+          // bottom: 10%;
+          // display: flex;
+          // justify-content: space-between;
+
+          .add-to-compare {
+            position: absolute;
+            bottom: 8%;
+            left: 10%;
+
+
+          }
+
+          .add-to-wishlist {
+            position: absolute;
+            bottom: 8%;
+            right: 10%;
+
+
+          }
+        }
+      }
+
+
+      .daily-product-category {
+        font-size: 1.2rem;
+        color: #878787;
+        text-decoration: none;
+        padding-bottom: 4rem;
+
+
+
+      }
+
+      .product-info-container {
+        position: absolute;
+        padding-right: 2rem;
+
+        border-right: 0.00000000001rem solid #cad5d5;
+        padding-right: -2rem;
+
+        .daily-product-description {
+          width: 20.1rem;
+          height: 3.6rem;
+          overflow: hidden;
+          white-space: nowrap;
+          /* Don't forget this one */
+          text-overflow: ellipsis;
+
+
+
+          a {
+            height: 100%;
+            width: 100%;
+            font-size: 1.3rem;
+            text-decoration: none;
+            font-weight: 600;
+            color: #333e48;
+
+
+          }
+        }
+
+        .product-image {
+          width: 20.1rem;
+          height: 19rem;
+
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+        }
+
+        .price-container {
+          // display: flex;
+          // justify-content:center;
+          text-align: center;
+          // border-bottom: 0.000001px solid #cad5d5;
+          padding-bottom: 4rem;
+          height: 2.7rem;
+
+          .view-price {
+            font-size: 2rem;
+            color: #343f49;
+            font-weight: 400;
+            padding-bottom: 2rem;
+
+          }
+
+          .add-to-cart {
+            width: 3.5rem;
+            height: 3.5rem;
+            padding-top: 0.4rem;
+            margin-top: -0.6rem;
+            background: #fed700;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all ease-in 0.1s;
+
+            &:hover {
+              margin-top: -0.8rem;
+            }
+
+
+            i {
+              // width:2rem ;
+              // height:2rem ;
+              font-size: 1.8rem;
+              color: #f5f5f5;
+              text-align: center;
+              padding: 0.4rem 0.6rem;
+            }
+          }
+        }
+      }
+
+      .hover-container {
+        font-size: 1.3rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        visibility: hidden;
+
+        .add-to-compare,
+        .add-to-wishlist {
+
+
+
+          a {
+            &:hover {
+              color: #fed700;
+            }
+
+            i {
+              padding-right: 0.5rem;
+            }
+
+            text-decoration: none;
+            color: #848484;
+
+          }
+        }
+
+      }
+    }
+
+  }
+
+
+
+}
+
+.new-arrivals {
+  margin-top: 2rem;
+  padding: 0rem 5rem;
+  // border-bottom: 0.1px solid #cad5d5;
+  // background: red;
+  // height: 120rem;
+  // margin-bottom: 2rem;
+  // clear: both;
+  // display: block;
+
+  .arrivals-header {
+    border-bottom: 0.000001px solid #cad5d5;
+
+    .arrivals-title {
+      line-height: 1;
+      color: #333e48;
+
+      width: 13rem;
+      border-bottom: 2.5px solid #fed700;
+      margin-right: 2rem;
+      margin-bottom: -0.1rem;
+      padding: 1rem 0rem;
+
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 500;
+
+      }
+    }
+  }
+
+  .new-products-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    .daily-product {
+      margin-top: 2rem;
+      padding: 0.8rem;
+      // width: 23.2rem;
+      position: relative;
+      height: 35rem;
+      // overflow: hidden;
+
+      &:nth-child(5),
+      &:nth-child(10) {
+        .product-info-container {
+          border: none;
+        }
+      }
+
+      &:nth-child(3),
+      &:nth-child(6) {
+        .product-info-container {
+          border-right: 0.00000000001rem solid #cad5d5;
+        }
+      }
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        padding-bottom: 0rem;
+      }
+
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10) {
+        margin-top: 0rem;
+      }
+
+
+
+      &:hover {
+        // border-radius: 0.5rem;
+        height: 35rem;
+        -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+        -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+        box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+
+        // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+        // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+        // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+        .product-info-container {
+          border: none;
+        }
+
+        .price-container {
+          border-bottom: 0.1px solid #cad5d5;
+
+
+        }
+
+        .price-container .view-price {
+          margin-bottom: 2rem;
+
+        }
+
+        .hover-container {
+          visibility: visible;
+          // position: relative;
+          // bottom: 10%;
+          // display: flex;
+          // justify-content: space-between;
+
+          .add-to-compare {
+            position: absolute;
+            bottom: 8%;
+            left: 10%;
+
+
+          }
+
+          .add-to-wishlist {
+            position: absolute;
+            bottom: 8%;
+            right: 10%;
+
+
+          }
+        }
+      }
+
+
+      .daily-product-category {
+        font-size: 1.2rem;
+        color: #878787;
+        text-decoration: none;
+        padding-bottom: 4rem;
+
+
+
+      }
+
+      .product-info-container {
+        position: absolute;
+        padding-right: 2rem;
+
+        border-right: 0.00000000001rem solid #cad5d5;
+        padding-right: -2rem;
+
+        .daily-product-description {
+          width: 20.1rem;
+          height: 3.6rem;
+          overflow: hidden;
+          white-space: nowrap;
+          /* Don't forget this one */
+          text-overflow: ellipsis;
+
+
+
+          a {
+            height: 100%;
+            width: 100%;
+            font-size: 1.3rem;
+            text-decoration: none;
+            font-weight: 600;
+            color: #333e48;
+
+
+          }
+        }
+
+        .product-image {
+          width: 20.1rem;
+          height: 19rem;
+
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+
+        }
+
+        .price-container {
+          // display: flex;
+          // justify-content:center;
+          text-align: center;
+          // border-bottom: 0.000001px solid #cad5d5;
+          padding-bottom: 4rem;
+          height: 2.7rem;
+
+          .view-price {
+            font-size: 2rem;
+            color: #343f49;
+            font-weight: 400;
+            padding-bottom: 2rem;
+
+          }
+
+          .add-to-cart {
+            width: 3.5rem;
+            height: 3.5rem;
+            padding-top: 0.4rem;
+            margin-top: -0.6rem;
+            background: #fed700;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all ease-in 0.1s;
+
+            &:hover {
+              margin-top: -0.8rem;
+            }
+
+
+            i {
+              // width:2rem ;
+              // height:2rem ;
+              font-size: 1.8rem;
+              color: #f5f5f5;
+              text-align: center;
+              padding: 0.4rem 0.6rem;
+            }
+          }
+        }
+      }
+
+      .hover-container {
+        font-size: 1.3rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        visibility: hidden;
+
+        .add-to-compare,
+        .add-to-wishlist {
+
+
+
+          a {
+            &:hover {
+              color: #fed700;
+            }
+
+            i {
+              padding-right: 0.5rem;
+            }
+
+            text-decoration: none;
+            color: #848484;
+
+          }
+        }
+
+      }
+    }
+  }
+
+
+}
+
+.partners {
+  padding: 0rem 5rem;
+
+  .partners-header {
+    border-bottom: 0.000001px solid #cad5d5;
+
+    .partners-title {
+      line-height: 1;
+      color: #333e48;
+
+      width: 13rem;
+      border-bottom: 2px solid #fed700;
+      margin-right: 2rem;
+      margin-bottom: -0.1rem;
+      padding: 1rem 0rem;
+
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 500;
+
+      }
+    }
+  }
+
+  .partners-logo {
+
+    .logo {
+      margin-top: 2rem;
+      width: 15rem;
+      height: 15rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        &:hover{
+          opacity: .5;
+        }
+      }
+    }
+  }
+
+}
 }
 
 @media only screen and (max-width:1200px) {
@@ -5546,6 +6688,7 @@ about Ends Here
   }
 
   .best-sellers {
+    width: 100%;
     margin-bottom: 2rem;
     padding: 0rem 10rem;
     margin-top: 2rem;
@@ -5590,7 +6733,7 @@ about Ends Here
       .product-item {
         display: flex;
         // width: 33.3%;
-        width: 33.3rem;
+        // width: 33.3rem;
         height: 17.2rem;
         justify-content: space-between;
         margin-bottom: 1rem;
@@ -5623,8 +6766,8 @@ about Ends Here
 
 
         .product-image {
-          width: 10rem;
-          height: 10rem;
+          width: 15rem;
+          height: 14rem;
 
           img {
             width: 100%;
@@ -6616,6 +7759,34 @@ about Ends Here
 
 
 @media only screen and (max-width:1024px) {
+  .what .fix{
+  position: fixed;
+  top: 90%;
+  right: 30% ;
+  z-index: 99;
+  width: 5rem;
+  height: 5rem;
+  // background-color:#25d366;
+  // border-radius: 20rem;
+
+  
+  a{
+
+  
+  width: 5rem;
+  height: 5rem;
+
+  i{
+  color:#25d366;
+  // color: #FED700;
+   width: 100%;
+   height: 100%;
+    font-size: 5rem;
+    padding: .1rem .2rem;
+  }
+  }
+  
+}
   .header-info {
     &-text {
       ul {
@@ -6677,7 +7848,7 @@ about Ends Here
 
         div.navigation-search {
           margin-top: 1rem;
-          margin-left: -4rem;
+          margin-left: 16rem;
           width: 33.6rem;
 
           input {
@@ -6802,7 +7973,9 @@ about Ends Here
 
   .new-arrivals {
     margin-top: 2rem;
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
+    height: 68rem;
+    overflow: hidden;
     // border-bottom: 0.1px solid #cad5d5;
     // background: red;
     // height: 120rem;
@@ -6839,19 +8012,20 @@ about Ends Here
       .daily-product {
         margin-top: 2rem;
         padding: 0.8rem;
+        margin-bottom: 1.5rem;
         // width: 23.2rem;
         width: 100%;
         position: relative;
-        height: 35rem;
+        height: 28rem;
         overflow: hidden;
 
-        &:nth-child(5),
+        
         &:nth-child(10) {
           .product-info-container {
             border: none;
           }
         }
-
+        &:nth-child(5),
         &:nth-child(3),
         &:nth-child(6) {
           .product-info-container {
@@ -6877,22 +8051,23 @@ about Ends Here
 
 
 
-        &:hover {
+         &:hover {
           // border-radius: 0.5rem;
-          height: 35rem;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // height: 25rem;
+          // -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
 
-          // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
-          // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
-          // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
           .product-info-container {
-            border: none;
+          border-right: 0.00000000001rem solid #cad5d5;
+
           }
 
           .price-container {
-            border-bottom: 0.1px solid #cad5d5;
+            border-bottom: none;
 
 
           }
@@ -6903,7 +8078,7 @@ about Ends Here
           }
 
           .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // position: relative;
             // bottom: 10%;
             // display: flex;
@@ -7059,14 +8234,15 @@ about Ends Here
   }
 
   .main-home {
-    padding: 0 10rem;
+    padding: 0 5rem;
     background-color: #f5f5f5;
     position: relative;
     clear: both;
     display: flex;
     padding-bottom: 3rem;
     height: 60rem;
-    width: 92.4rem;
+    // width: 92.4rem;
+    width: 100%;
 
   }
 
@@ -7081,7 +8257,7 @@ about Ends Here
   .slide-container {
     // margin: 1rem;
     // width: 100%;
-    width: 81rem;
+    width: 92.4rem;
 
     height: 35rem;
     position: relative;
@@ -7149,7 +8325,8 @@ about Ends Here
     display: flex;
     justify-content: space-between;
     // width: 64.2rem;
-    width: 81rem;
+    // width: 81rem;
+    width: 100%;
 
 
     height: 20rem;
@@ -7198,9 +8375,12 @@ about Ends Here
 
   // best sellers section
   .best-sellers {
+    width: 100%;
     margin-bottom: 2rem;
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
     margin-top: 2rem;
+    height: 35rem;
+    overflow: hidden;
 
     .sellers-header {
       border-bottom: 0.000001px solid #cad5d5;
@@ -7240,20 +8420,24 @@ about Ends Here
       .product-item {
         display: flex;
         // width: 33.3%;
-        width: 27rem;
-        height: 17.2rem;
+        // width: 27rem;
+        // width: 30.8rem;
+        height: 14rem;
         justify-content: space-between;
         margin-bottom: 1rem;
 
         &:hover {
           overflow: hidden;
           z-index: 99;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+          // -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
 
           & .product-description .price-container {
-            border-bottom: 0.00000000001rem solid #cad5d5;
+            border-bottom: none;
             padding-bottom: 4rem;
             // padding-right: 1.6rem;
 
@@ -7261,11 +8445,11 @@ about Ends Here
           }
 
           & .product-description .product-border {
-            border: none;
+             border-right: 0.00000000001rem solid #cad5d5;
           }
 
           .product-description .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // margin-bottom: -6rem;
           }
 
@@ -7273,8 +8457,8 @@ about Ends Here
 
 
         .product-image {
-          width: 10rem;
-          height: 10rem;
+          width: 12rem;
+          height: 14rem;
 
           img {
             width: 100%;
@@ -7410,10 +8594,11 @@ about Ends Here
 
   .daily-deals {
     background-color: #fff;
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
     margin-top: 4rem;
-    height: 50rem;
+    height: 38rem;
     width: 100%;
+    overflow: hidden;
 
     .daily-deals-header {
       display: flex;
@@ -7487,7 +8672,7 @@ about Ends Here
         width: 16rem;
         width: 100%;
         position: relative;
-        height: 35rem;
+        height: 28rem;
         overflow: hidden;
 
         &:nth-child(5) {
@@ -7498,20 +8683,21 @@ about Ends Here
 
         &:hover {
           // border-radius: 0.5rem;
-          height: 35rem;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // height: 25rem;
+          // -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
 
-          // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
-          // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
-          // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
           .product-info-container {
-            border: none;
+          border-right: 0.00000000001rem solid #cad5d5;
+
           }
 
           .price-container {
-            border-bottom: 0.1px solid #cad5d5;
+            border-bottom: none;
 
 
           }
@@ -7522,7 +8708,7 @@ about Ends Here
           }
 
           .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // position: relative;
             // bottom: 10%;
             // display: flex;
@@ -7689,7 +8875,7 @@ about Ends Here
     // margin: auto;
     // margin: 1rem auto;
     // margin-top: -20rem;
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
     align-items: center;
     // margin-bottom: 0rem;
 
@@ -7732,7 +8918,7 @@ about Ends Here
   }
 
   .main-contact {
-    padding: 0 10rem;
+    padding: 0 5rem;
     margin-bottom: 45rem;
     // height:180rem;
     height: 100%;
@@ -7959,7 +9145,7 @@ about Ends Here
   }
 
   .about-info {
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -7989,7 +9175,7 @@ about Ends Here
 
   .who-we-are {
     margin: 10rem 0rem;
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -8026,7 +9212,7 @@ about Ends Here
 
   .our-services {
     background-color: #f4f9fc;
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
     padding-bottom: 3rem;
 
 
@@ -8094,7 +9280,7 @@ about Ends Here
   }
 
   .team {
-    padding: 0rem 10rem;
+    padding: 0rem 5rem;
     background-color: #f5f5f5;
     margin-bottom: 3rem;
     height: 100%;
@@ -8295,6 +9481,207 @@ about Ends Here
       }
     }
   }
+
+  .shop-container {
+  padding: 0rem 10rem;
+
+  .row{
+    display: flex;
+    h2{
+      z-index: 9;
+      height: 3rem;
+      text-align: center;
+      // margin:2rem auto;
+    }
+  }
+
+  .catp{
+    display: block;
+  }
+
+
+  .shop-prod .row{
+    margin-left: 2rem;
+    // margin: 2rem 3rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+    
+  }
+
+  .product-card-container {
+
+    width: 24rem;
+    height: 37rem;
+    padding: 1rem;
+    margin-right: 0rem;
+    // display: flex;
+    // justify-content: space-between;
+    // border: #FED700 solid 1px;
+    border-right: 0.00000000001rem solid #cad5d5;
+
+    .product-image {
+      width: 21.1rem;
+      height: 18rem;
+
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+
+
+    }
+
+    .product-description {
+      width: 18rem;
+      height: 14rem;
+      padding: 0rem 0rem;
+
+
+
+      .product-border {
+        // padding-right: 1.6rem;
+        padding-right: 0rem;
+        // height: 14rem;
+
+
+      }
+
+      .product-category {
+        margin-top: 1rem;
+
+        a {
+          text-decoration: none;
+          font-size: 1.2rem;
+          color: #878787;
+        }
+      }
+
+      .product-name {
+        width: 100%;
+        height: 3.6rem;
+        align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+          text-overflow: ellipsis;
+
+        a {
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: #333e48;
+          font-weight: 600;
+          font-size: 1.4rem;
+          
+        }
+      }
+
+      .price-container {
+        width: 18.7rem;
+        height: 6rem;
+        text-align: center;
+        // display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+        margin-bottom: 1rem;
+
+
+        .view-price {
+          font-size: 2rem;
+          color: #343f49;
+        }
+
+        .add-to-cart {
+          margin-right: 1rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          padding-top: 0.4rem;
+          margin-top: -0.6rem;
+          background: #fed700;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all ease-in 0.1s;
+
+          &:hover {
+            margin-top: -0.8rem;
+          }
+
+
+          i {
+            // width:2rem ;
+            // height:2rem ;
+            font-size: 1.8rem;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 0.4rem 0.6rem;
+          }
+        }
+      }
+
+      .hover-container {
+        padding-right: 1.6rem;
+        font-size: 1.3rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        // padding-top: 1rem;
+        visibility: hidden;
+        margin-bottom: 2rem;
+
+
+
+
+        .add-to-compare,
+        .add-to-wishlist {
+
+          a {
+
+            &:hover {
+              color: #fed700;
+            }
+
+            i {
+              padding-right: 0.5rem;
+            }
+
+            text-decoration: none;
+            color: #848484;
+
+          }
+        }
+      }
+    }
+
+    &:hover {
+      overflow: hidden;
+      z-index: 99;
+      -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+      -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+      box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+
+      & .product-description .price-container {
+        border-bottom: 0.00000000001rem solid #cad5d5;
+        padding-bottom: 4rem;
+        // padding-right: 1.6rem;
+
+
+      }
+
+      & .product-description .product-border {
+        border: none;
+      }
+
+      .product-description .hover-container {
+        visibility: visible;
+        // margin-bottom: -6rem;
+      }
+
+    }
+  }
+}
 }
 
 
@@ -8309,7 +9696,7 @@ about Ends Here
 
 
     .containerNav {
-      padding: 0 5rem;
+      padding: 0 2rem;
 
       header {
 
@@ -8560,13 +9947,14 @@ about Ends Here
 
   .new-arrivals {
     margin-top: 2rem;
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
     // border-bottom: 0.1px solid #cad5d5;
     // background: red;
     // height: 120rem;
     // margin-bottom: 2rem;
     // clear: both;
     // display: block;
+    height: 62rem;
 
     .arrivals-header {
       border-bottom: 0.000001px solid #cad5d5;
@@ -8599,16 +9987,17 @@ about Ends Here
         padding: 0.8rem;
         // width: 23.2rem;
         position: relative;
-        height: 35rem;
+        height: 25rem;
         // overflow: hidden;
 
-        &:nth-child(5),
+        
         &:nth-child(10) {
           .product-info-container {
             border: none;
           }
         }
 
+        &:nth-child(5),
         &:nth-child(3),
         &:nth-child(6) {
           .product-info-container {
@@ -8636,20 +10025,20 @@ about Ends Here
 
         &:hover {
           // border-radius: 0.5rem;
-          height: 35rem;
-          // -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          // -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          // box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          height: 25rem;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           .product-info-container {
-            border: none;
+            border-right: 0.1px solid #cad5d5;
           }
 
           .price-container {
-            border-bottom: 0.1px solid #cad5d5;
+            border-bottom: none;
 
 
           }
@@ -8660,7 +10049,7 @@ about Ends Here
           }
 
           .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // position: relative;
             // bottom: 10%;
             // display: flex;
@@ -8703,7 +10092,7 @@ about Ends Here
           padding-right: -2rem;
 
           .daily-product-description {
-            width: 20.1rem;
+            width: 15rem;
             height: 3.6rem;
             overflow: hidden;
             white-space: nowrap;
@@ -8727,8 +10116,8 @@ about Ends Here
           .product-image {
             // width: 20.1rem;
             text-align: center;
-            width: 100%;
-            height: 19rem;
+            width: 14rem;
+            height: 13.3rem;
 
 
             img {
@@ -8820,7 +10209,7 @@ about Ends Here
   }
 
   .content-wrapper {
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
 
     nav.navigation {
       margin: 1rem 0;
@@ -8848,7 +10237,7 @@ about Ends Here
 
         div.navigation-search {
           margin-top: 1rem;
-          margin-left: -4rem;
+          margin-left: 14rem;
           width: 23.6rem;
 
           input {
@@ -8971,16 +10360,22 @@ about Ends Here
   }
 
   .main-home {
-    padding: 0 5rem;
+    padding: 0 2rem;
     background-color: #f5f5f5;
     position: relative;
     clear: both;
     display: flex;
     padding-bottom: 3rem;
     height: 60rem;
-    width: 76.8rem;
+    width: 100%;
+
+    .other-categories{
+      width: 100%;
+    }
+    
 
   }
+
 
   //end of  categories styles
 
@@ -8989,7 +10384,7 @@ about Ends Here
   .slide-container {
     // margin: 1rem;
     // width: 100%;
-    width: 66rem;
+    width: 70.8rem;
 
     height: 35rem;
     position: relative;
@@ -9099,9 +10494,9 @@ about Ends Here
 
   .daily-deals {
     background-color: #fff;
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
     margin-top: 4rem;
-    height: 50rem;
+    height: 35rem;
     width: 100%;
 
     .daily-deals-header {
@@ -9167,15 +10562,15 @@ about Ends Here
       grid-template-columns: repeat(4, 1fr);
       // grid-template-rows: repeat(2,1fr);
       width: 100%;
-      height: 40rem;
+      height: 24rem;
 
       .daily-product {
         margin-top: 2rem;
         padding: 0.8rem;
         // width: 23.2rem;
-        width: 100%;
+        // width: 100%;
         position: relative;
-        height: 35rem;
+        height: 24rem;
         overflow: hidden;
 
         &:nth-child(5) {
@@ -9186,20 +10581,20 @@ about Ends Here
 
         &:hover {
           // border-radius: 0.5rem;
-          height: 35rem;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          height: 25rem;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           .product-info-container {
-            border: none;
+            border-right: 0.1px solid #cad5d5;
           }
 
           .price-container {
-            border-bottom: 0.1px solid #cad5d5;
+            border-bottom: none;
 
 
           }
@@ -9210,7 +10605,7 @@ about Ends Here
           }
 
           .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // position: relative;
             // bottom: 10%;
             // display: flex;
@@ -9253,7 +10648,7 @@ about Ends Here
           padding-right: -2rem;
 
           .daily-product-description {
-            width: 20.1rem;
+            width: 15rem;
             height: 3.6rem;
             overflow: hidden;
             white-space: nowrap;
@@ -9276,8 +10671,8 @@ about Ends Here
 
           .product-image {
             // width: 20.1rem;
-            width: 100%;
-            height: 19rem;
+            width: 14rem;
+            height: 13.3rem;
 
 
             img {
@@ -9370,13 +10765,14 @@ about Ends Here
   .big-ad1-container,
   .big-ad2-container,
   .big-ad4 {
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
   }
 
   // best sellers section
   .best-sellers {
+    width: 100%;
     margin-bottom: 2rem;
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
     margin-top: 2rem;
 
     .sellers-header {
@@ -9417,20 +10813,20 @@ about Ends Here
       .product-item {
         display: flex;
         // width: 33.3%;
-        width: 22.6rem;
-        height: 17.2rem;
+        // width: 22.6rem;
+        height: 14rem;
         justify-content: space-between;
         margin-bottom: 1rem;
 
         &:hover {
           overflow: hidden;
           z-index: 99;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           & .product-description .price-container {
-            border-bottom: 0.00000000001rem solid #cad5d5;
+            border-bottom: none;
             padding-bottom: 4rem;
             // padding-right: 1.6rem;
 
@@ -9438,11 +10834,11 @@ about Ends Here
           }
 
           & .product-description .product-border {
-            border: none;
+             border-right: 0.00000000001rem solid #cad5d5;
           }
 
           .product-description .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // margin-bottom: -6rem;
           }
 
@@ -9450,8 +10846,8 @@ about Ends Here
 
 
         .product-image {
-          width: 13rem;
-          height: 40rem;
+          width: 9.5rem;
+          height: 9.5rem;
 
           img {
             width: 100%;
@@ -9588,7 +10984,7 @@ about Ends Here
     background: #f5f5f5;
 
     .trust-content {
-      padding: 0rem 5rem;
+      padding: 0rem 2rem;
       display: flex;
       justify-content: space-between;
 
@@ -9642,7 +11038,7 @@ about Ends Here
     // margin: auto;
     // margin: 1rem auto;
     // margin-top: 20rem;
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
     align-items: center;
     // margin-bottom: 15rem;
 
@@ -10221,7 +11617,7 @@ about Ends Here
   }
 
   .partners {
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
 
     .partners-header {
       border-bottom: 0.000001px solid #cad5d5;
@@ -10434,6 +11830,207 @@ about Ends Here
     }
   }
 
+  .shop-container {
+  padding: 0rem 10rem;
+
+  .row{
+    display: flex;
+    h2{
+      z-index: 9;
+      height: 3rem;
+      text-align: center;
+      // margin:2rem auto;
+    }
+  }
+
+  .catp{
+    display: block;
+  }
+
+
+  .shop-prod .row{
+    margin-left: 2rem;
+    // margin: 2rem 3rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+    
+  }
+
+  .product-card-container {
+
+    width: 20rem;
+    height: 37rem;
+    padding: 1rem;
+    margin-right: 0rem;
+    // display: flex;
+    // justify-content: space-between;
+    // border: #FED700 solid 1px;
+    border-right: 0.00000000001rem solid #cad5d5;
+
+    .product-image {
+      width: 19rem;
+      height: 18rem;
+
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+
+
+    }
+
+    .product-description {
+      width: 18rem;
+      height: 14rem;
+      padding: 0rem 0rem;
+
+
+
+      .product-border {
+        // padding-right: 1.6rem;
+        padding-right: 0rem;
+        // height: 14rem;
+
+
+      }
+
+      .product-category {
+        margin-top: 1rem;
+
+        a {
+          text-decoration: none;
+          font-size: 1.2rem;
+          color: #878787;
+        }
+      }
+
+      .product-name {
+        width: 100%;
+        height: 3.6rem;
+        align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+          text-overflow: ellipsis;
+
+        a {
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: #333e48;
+          font-weight: 600;
+          font-size: 1.4rem;
+          
+        }
+      }
+
+      .price-container {
+        width: 18.7rem;
+        height: 6rem;
+        text-align: center;
+        // display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+        margin-bottom: 1rem;
+
+
+        .view-price {
+          font-size: 2rem;
+          color: #343f49;
+        }
+
+        .add-to-cart {
+          margin-right: 1rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          padding-top: 0.4rem;
+          margin-top: -0.6rem;
+          background: #fed700;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all ease-in 0.1s;
+
+          &:hover {
+            margin-top: -0.8rem;
+          }
+
+
+          i {
+            // width:2rem ;
+            // height:2rem ;
+            font-size: 1.8rem;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 0.4rem 0.6rem;
+          }
+        }
+      }
+
+      .hover-container {
+        padding-right: 1.6rem;
+        font-size: 1.3rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        // padding-top: 1rem;
+        visibility: hidden;
+        margin-bottom: 2rem;
+
+
+
+
+        .add-to-compare,
+        .add-to-wishlist {
+
+          a {
+
+            &:hover {
+              color: #fed700;
+            }
+
+            i {
+              padding-right: 0.5rem;
+            }
+
+            text-decoration: none;
+            color: #848484;
+
+          }
+        }
+      }
+    }
+
+    &:hover {
+      overflow: hidden;
+      z-index: 99;
+      -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+      -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+      box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+
+      & .product-description .price-container {
+        border-bottom: 0.00000000001rem solid #cad5d5;
+        padding-bottom: 4rem;
+        // padding-right: 1.6rem;
+
+
+      }
+
+      & .product-description .product-border {
+        border: none;
+      }
+
+      .product-description .hover-container {
+        visibility: visible;
+        // margin-bottom: -6rem;
+      }
+
+    }
+  }
+}
+
 
 
 
@@ -10586,8 +12183,12 @@ about Ends Here
   }
 
   .new-arrivals {
+    width: 100%;
     margin-top: 2rem;
     padding: 0rem 1rem;
+    // height: 90rem;
+    height:115rem;
+
     // border-bottom: 0.1px solid #cad5d5;
     // background: red;
     // height: 120rem;
@@ -10619,25 +12220,32 @@ about Ends Here
     .new-products-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 100%;
+      height: 26rem;
 
       .daily-product {
         margin-top: 2rem;
-        padding: 0.8rem;
+        padding: 0.8rem ;
+        margin-bottom: 0rem;
+        padding-bottom: 3rem;
         // width: 23.2rem;
         position: relative;
-        height: 35rem;
+        height: 26rem;
+        border-bottom: 0.00000000001rem solid #cad5d5;
         // overflow: hidden;
 
-        &:nth-child(5),
-        &:nth-child(10) {
+        
+        &:nth-child(2), 
+        &:nth-child(4), 
+        &:nth-child(6), 
+        &:nth-child(8){
           .product-info-container {
             border: none;
           }
         }
-
-        &:nth-child(3),
-        &:nth-child(6) {
+        &:nth-child(5),
+        &:nth-child(3){
           .product-info-container {
             border-right: 0.00000000001rem solid #cad5d5;
           }
@@ -10651,7 +12259,9 @@ about Ends Here
           padding-bottom: 0rem;
         }
 
-        &:nth-child(6),
+        &:nth-child(6){
+          margin-top: 2rem;
+        }
         &:nth-child(7),
         &:nth-child(8),
         &:nth-child(9),
@@ -10659,24 +12269,30 @@ about Ends Here
           margin-top: 0rem;
         }
 
+        &:nth-child(7),
+        &:nth-child(8){
+          border-bottom:none;
+        }
+
 
 
         &:hover {
           // border-radius: 0.5rem;
-          height: 35rem;
-          // -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          // -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          // box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          // height: 5rem;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+          border:none;
 
           // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           .product-info-container {
-            border: none;
+            border:none;
           }
 
           .price-container {
-            border-bottom: 0.1px solid #cad5d5;
+            border-bottom: none;
 
 
           }
@@ -10687,7 +12303,7 @@ about Ends Here
           }
 
           .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // position: relative;
             // bottom: 10%;
             // display: flex;
@@ -10725,12 +12341,11 @@ about Ends Here
         .product-info-container {
           position: absolute;
           padding-right: 2rem;
-
           border-right: 0.00000000001rem solid #cad5d5;
           padding-right: -2rem;
 
           .daily-product-description {
-            width: 20.1rem;
+            width: 15rem;
             height: 3.6rem;
             overflow: hidden;
             white-space: nowrap;
@@ -10754,16 +12369,16 @@ about Ends Here
           .product-image {
             // width: 20.1rem;
             text-align: center;
-            width: 100%;
-            height: 19rem;
+            width: 16rem;
+            height: 14rem;
 
 
             img {
-              display: block;
-              margin-right: auto;
-              margin-left: auto;
-              width: 50%;
-              height: 80%;
+              // display: block;
+              // margin-right: auto;
+              // margin-left: auto;
+              width: 100%;
+              height: 100%;
             }
 
           }
@@ -10777,10 +12392,10 @@ about Ends Here
             height: 2.7rem;
 
             .view-price {
+
               font-size: 2rem;
               color: #343f49;
               font-weight: 400;
-              padding-bottom: 2rem;
 
             }
 
@@ -11018,7 +12633,7 @@ about Ends Here
     clear: both;
     display: flex;
 
-    height: 70rem;
+    height: 45rem;
     width: 100%;
     // margin-bottom: 22rem;
 
@@ -11242,25 +12857,27 @@ about Ends Here
 
   .other-categories {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2,1fr);
     // justify-content: space-between;
     // width: 64.2rem;
-    width: 35rem;
+    width:100%;
     // flex-direction: column;
     margin: 0rem auto;
+    grid-gap: .5rem;
 
 
-    height: 70rem;
+    height: 25rem;
     overflow: hidden;
     // background-color: #fff;
 
     .other-menu3 {
-      margin-top: -38rem;
+      margin-top: 0rem;
+      display: none;
     }
 
     .other-menu2,
     .other-menu2:last-child {
-      visibility: hidden;
+      visibility: visible;
     }
 
     .other-menu2,
@@ -11270,10 +12887,10 @@ about Ends Here
       // background: aqua;
       border-radius: .5rem;
       // width: 25.3%;
-      width: 100%;
+      width: 90%;
       height: 22rem;
       border-right: 1px solid #cad5d5;
-      background-color: orange;
+      // background-color: orange;
       // margin-left: 0.4rem;
       transition: all 0.2s;
       overflow: hidden;
@@ -11312,9 +12929,9 @@ about Ends Here
 
   .daily-deals {
     background-color: #fff;
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     margin-top: 4rem;
-    height: 82rem;
+    height: 56rem;
     width: 100%;
 
     .daily-deals-header {
@@ -11378,41 +12995,42 @@ about Ends Here
 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: repeat(2,1fr);
       width: 100%;
-      height: 79rem;
+      height: 55rem;
 
       .daily-product {
-        margin-top: 2rem;
+        margin-top: 0rem;
         padding: 0.8rem;
         // width: 23.2rem;
-        width: 100%;
         position: relative;
-        height: 35rem;
-        overflow: hidden;
+        height: 25rem;
+        border-bottom: 0.00000000001rem solid #cad5d5;
+        // overflow: hidden;
 
-        &:nth-child(5) {
-          display: none;
-        }
+        
+        
+
+        
 
 
-
-        &:hover {
+        & {
           // border-radius: 0.5rem;
-          height: 35rem;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          height: 25rem;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           .product-info-container {
+            // border-right: 0.1px solid #cad5d5;
             border: none;
           }
 
           .price-container {
-            border-bottom: 0.1px solid #cad5d5;
+            border-bottom: none;
 
 
           }
@@ -11423,7 +13041,7 @@ about Ends Here
           }
 
           .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // position: relative;
             // bottom: 10%;
             // display: flex;
@@ -11447,6 +13065,8 @@ about Ends Here
           }
         }
 
+      
+
 
         .daily-product-category {
           font-size: 1.2rem;
@@ -11463,10 +13083,11 @@ about Ends Here
           padding-right: 2rem;
 
           border-right: 0.00000000001rem solid #cad5d5;
+          // border: none;
           padding-right: -2rem;
 
           .daily-product-description {
-            width: 20.1rem;
+            width: 15rem;
             height: 3.6rem;
             overflow: hidden;
             white-space: nowrap;
@@ -11489,13 +13110,17 @@ about Ends Here
 
           .product-image {
             // width: 20.1rem;
-            width: 100%;
-            height: 19rem;
+            text-align: center;
+            width: 14rem;
+            height: 13.3rem;
 
 
             img {
-              width: 100%;
-              height: 100%;
+              display: block;
+              margin-right: auto;
+              margin-left: auto;
+              width: 50%;
+              height: 80%;
             }
 
           }
@@ -11543,6 +13168,8 @@ about Ends Here
           }
         }
 
+         
+
         .hover-container {
           font-size: 1.3rem;
           text-decoration: none;
@@ -11586,10 +13213,13 @@ about Ends Here
     padding: 0rem 1rem;
   }
 
-  .best-sellers {
+ .best-sellers {
+    width: 100%;
     margin-bottom: 2rem;
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     margin-top: 2rem;
+      height: 70rem;
+
 
     .sellers-header {
       border-bottom: 0.000001px solid #cad5d5;
@@ -11616,16 +13246,11 @@ about Ends Here
     .content-container {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      height: 70rem;
 
-      .product-item:nth-child(3) {
-        border-right: 0.000001px solid #cad5d5;
-      }
-
-      .product-item:nth-child(2),
-      .product-item:nth-child(4),
-      .product-item:nth-child(8),
+      .product-item:nth-child(3),
       .product-item:nth-child(6) {
         .product-description .product-border {
           border: none;
@@ -11635,20 +13260,27 @@ about Ends Here
       .product-item {
         display: flex;
         // width: 33.3%;
-        width: 20.25rem;
-        height: 17.2rem;
+        // width: 22.6rem;
+             border-bottom: 0.000001px solid #cad5d5;
+
+        height: 15rem;
         justify-content: space-between;
-        margin-bottom: 1rem;
+        // padding-bottom: 2rem;
+        // margin-bottom: 3rem;
+
+        &:nth-child(4){
+          border: none;
+        }
 
         &:hover {
           overflow: hidden;
           z-index: 99;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           & .product-description .price-container {
-            border-bottom: 0.00000000001rem solid #cad5d5;
+            border-bottom: none;
             padding-bottom: 4rem;
             // padding-right: 1.6rem;
 
@@ -11656,11 +13288,11 @@ about Ends Here
           }
 
           & .product-description .product-border {
-            border: none;
+             border-right:none;
           }
 
           .product-description .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // margin-bottom: -6rem;
           }
 
@@ -11668,8 +13300,8 @@ about Ends Here
 
 
         .product-image {
-          width: 13rem;
-          height: 40rem;
+          width: 15rem;
+          height: 14rem;
 
           img {
             width: 100%;
@@ -11680,13 +13312,13 @@ about Ends Here
 
 
         .product-description {
-          width: 14rem;
+          width: 24rem;
           height: 14rem;
 
 
 
           .product-border {
-            border-right: 0.00000000001rem solid #cad5d5;
+            border:none;
             padding-right: 1.6rem;
             // height: 14rem;
 
@@ -12515,11 +14147,13 @@ about Ends Here
 
       .member-profiles {
     display: flex;
-    justify-content: space-between;
-    height: 85rem;
+    // justify-content: space-between;
+    flex-direction: column;
+    height: 120rem;
 
     .member-profile {
-      width: 48%;
+      margin-bottom: 2rem;
+      width: 100%;
        -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
       -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
       box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
@@ -12718,9 +14352,232 @@ about Ends Here
     }
   }
 
+    .shop-container {
+  padding: 0rem 5rem;
+
+  .row{
+    display: flex;
+    h2{
+      z-index: 9;
+      height: 3rem;
+      text-align: center;
+      // margin:2rem auto;
+    }
+  }
+
+  .catp{
+    display: block;
+  }
+
+
+  .shop-prod .row{
+    margin-left: 0rem;
+    margin: 4rem auto;
+    // margin: 2rem 3rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    
+  }
+
+  .product-card-container {
+
+    width: 20rem;
+    height: 37rem;
+    padding: 1rem;
+    margin-right: 0rem;
+    
+    // display: flex;
+    // justify-content: space-between;
+    // border: #FED700 solid 1px;
+    border-right: 0.00000000001rem solid #cad5d5;
+
+    .product-image {
+      width: 18rem;
+      height: 18rem;
+
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+
+
+    }
+
+    .product-description {
+      width: 18rem;
+      height: 14rem;
+      padding: 0rem 0rem;
+
+
+
+      .product-border {
+        // padding-right: 1.6rem;
+        padding-right: 0rem;
+        // height: 14rem;
+
+
+      }
+
+      .product-category {
+        margin-top: 1rem;
+
+        a {
+          text-decoration: none;
+          font-size: 1.2rem;
+          color: #878787;
+        }
+      }
+
+      .product-name {
+        width: 100%;
+        height: 3.6rem;
+        align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+          text-overflow: ellipsis;
+
+        a {
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: #333e48;
+          font-weight: 600;
+          font-size: 1.4rem;
+          
+        }
+      }
+
+      .price-container {
+        width: 18.7rem;
+        height: 6rem;
+        text-align: center;
+        // display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+        margin-bottom: 1rem;
+
+
+        .view-price {
+          font-size: 2rem;
+          color: #343f49;
+        }
+
+        .add-to-cart {
+          margin-right: 1rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          padding-top: 0.4rem;
+          margin-top: -0.6rem;
+          background: #fed700;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all ease-in 0.1s;
+
+          &:hover {
+            margin-top: -0.8rem;
+          }
+
+
+          i {
+            // width:2rem ;
+            // height:2rem ;
+            font-size: 1.8rem;
+            color: #f5f5f5;
+            text-align: center;
+            padding: 0.4rem 0.6rem;
+          }
+        }
+      }
+
+      .hover-container {
+        padding-right: 1.6rem;
+        font-size: 1.3rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+        // padding-top: 1rem;
+        visibility: visible;
+        margin-bottom: 2rem;
+
+
+
+
+        .add-to-compare,
+        .add-to-wishlist {
+
+          a {
+
+            &:hover {
+              color: #fed700;
+            }
+
+            i {
+              padding-right: 0.5rem;
+            }
+
+            text-decoration: none;
+            color: #848484;
+
+          }
+        }
+      }
+    }
+
+    &{
+      overflow: hidden;
+      z-index: 99;
+      -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+      -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+      box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+
+      & .product-description .price-container {
+        border-bottom: 0.00000000001rem solid #cad5d5;
+        padding-bottom: 4rem;
+        // padding-right: 1.6rem;
+
+
+      }
+
+      & .product-description .product-border {
+        border: none;
+      }
+
+      .product-description .hover-container {
+        visibility: visible;
+        // margin-bottom: -6rem;
+      }
+
+    }
+  }
+}
+
 }
 
 @media only screen and (max-width:375px) {
+
+  .what .fix{
+  position: fixed;
+  top: 80%;
+  right: 40% ;
+  z-index: 99;
+  
+  a{
+  
+  color:#25d366;
+  width: 10rem;
+  height: 10rem;
+
+  i{
+   
+    font-size: 5rem;
+  }
+  }
+  
+}
 
   div.content-wrapper {
     padding: 0rem 1rem;
@@ -12894,7 +14751,7 @@ about Ends Here
     clear: both;
     display: flex;
 
-    height: 70rem;
+    height: 45rem;
     width: 100%;
     // margin-bottom: 22rem;
 
@@ -13039,10 +14896,9 @@ about Ends Here
     //   }
 
     section.slider-info {
-      width: 67rem !important;
 
       .slide-container {
-        margin: 1rem 0rem 1rem 1rem;
+        margin: 1rem 0rem 0rem 1rem;
         max-width: 34.5rem;
         // width: 100%;
 
@@ -13108,9 +14964,9 @@ about Ends Here
 
   .daily-deals {
     background-color: #fff;
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     margin-top: 4rem;
-    height: 82rem;
+    height: 57rem;
     width: 100%;
 
     .daily-deals-header {
@@ -13152,6 +15008,7 @@ about Ends Here
 
     // daily deals product
     .slider {
+      width: 100%;
       // //   // width: 24rem;
       //   // height: 24rem;
       // width: inherit;
@@ -13168,47 +15025,59 @@ about Ends Here
 
       ul {
         list-style: none;
+        width: 100%;
+
+        li{
+          width: 100%;
+        }
       }
 
       overflow: hidden;
 
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      grid-template-rows: repeat(2,1fr);
       width: 100%;
-      height: 79rem;
+      height: 55rem;
 
       .daily-product {
-        margin-top: 2rem;
-        padding: 0.8rem;
-        // width: 23.2rem;
         width: 100%;
+        margin-top: .5rem;
+        padding: 0.8rem;
+        // padding: 0rem;
+        // width: 23.2rem;
+    // border-right: 0.000001px solid #cad5d5;
+
         position: relative;
-        height: 35rem;
-        overflow: hidden;
+        height: 25rem;
+        border-bottom: 0.00000000001rem solid #cad5d5;
+        // border-bottom: none;
+        // overflow: hidden;
 
-        &:nth-child(5) {
-          display: none;
-        }
+       
+        
+        
+
+        
 
 
-
-        &:hover {
+        &:hover{
           // border-radius: 0.5rem;
-          height: 35rem;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          height: 25rem;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           .product-info-container {
+            // border-right: 0.1px solid #cad5d5;
             border: none;
           }
 
           .price-container {
-            border-bottom: 0.1px solid #cad5d5;
+            border-bottom: none;
 
 
           }
@@ -13219,7 +15088,298 @@ about Ends Here
           }
 
           .hover-container {
-            visibility: visible;
+            visibility: hidden;
+            // position: relative;
+            // bottom: 10%;
+            // display: flex;
+            // justify-content: space-between;
+
+            .add-to-compare {
+              position: absolute;
+              bottom: 8%;
+              left: 10%;
+
+
+            }
+
+            .add-to-wishlist {
+              position: absolute;
+              bottom: 8%;
+              right: 10%;
+
+
+            }
+          }
+        }
+
+      
+
+
+        .daily-product-category {
+          font-size: 1.2rem;
+          color: #878787;
+          text-decoration: none;
+          padding-bottom: 4rem;
+
+
+
+        }
+
+        .product-info-container {
+            width: 15rem;
+
+          position: absolute;
+          padding-right: 2rem;
+
+          border-right: 0.00000000001rem solid #cad5d5;
+          // border: none;
+          padding-right: -2rem;
+
+          .daily-product-description {
+            width: 15rem;
+            height: 3.6rem;
+            overflow: hidden;
+            white-space: nowrap;
+            /* Don't forget this one */
+            text-overflow: ellipsis;
+
+
+
+            a {
+              height: 100%;
+              width: 100%;
+              font-size: 1.3rem;
+              text-decoration: none;
+              font-weight: 600;
+              color: #333e48;
+
+
+            }
+          }
+
+          .product-image {
+            // width: 20.1rem;
+            text-align: center;
+            width: 14rem;
+            height: 13.3rem;
+
+
+            img {
+              display: block;
+              margin-right: auto;
+              margin-left: auto;
+              width: 50%;
+              height: 80%;
+            }
+
+          }
+
+          .price-container {
+            // display: flex;
+            // justify-content:center;
+            text-align: center;
+            // border-bottom: 0.000001px solid #cad5d5;
+            padding-bottom: 4rem;
+            height: 2.7rem;
+
+            .view-price {
+              font-size: 2rem;
+              color: #343f49;
+              font-weight: 400;
+              padding-bottom: 2rem;
+
+            }
+
+            .add-to-cart {
+              width: 3.5rem;
+              height: 3.5rem;
+              padding-top: 0.4rem;
+              margin-top: -0.6rem;
+              background: #fed700;
+              border-radius: 50%;
+              cursor: pointer;
+              transition: all ease-in 0.1s;
+
+              &:hover {
+                margin-top: -0.8rem;
+              }
+
+
+              i {
+                // width:2rem ;
+                // height:2rem ;
+                font-size: 1.8rem;
+                color: #f5f5f5;
+                text-align: center;
+                padding: 0.4rem 0.6rem;
+              }
+            }
+          }
+        }
+
+         
+
+         
+
+        .hover-container {
+          font-size: 1.3rem;
+          text-decoration: none;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 1rem;
+          visibility: hidden;
+
+          .add-to-compare,
+          .add-to-wishlist {
+
+
+
+            a {
+              &:hover {
+                color: #fed700;
+              }
+
+              i {
+                padding-right: 0.5rem;
+              }
+
+              text-decoration: none;
+              color: #848484;
+
+            }
+          }
+
+        }
+      }
+
+    }
+
+
+
+  }
+
+ .new-arrivals {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0rem 1rem;
+    // height: 90rem;
+    height:115rem;
+
+    // border-bottom: 0.1px solid #cad5d5;
+    // background: red;
+    // height: 120rem;
+    // margin-bottom: 2rem;
+    // clear: both;
+    // display: block;
+
+    .arrivals-header {
+      border-bottom: 0.000001px solid #cad5d5;
+
+      .arrivals-title {
+        line-height: 1;
+        color: #333e48;
+
+        width: 13rem;
+        border-bottom: 2.5px solid #fed700;
+        margin-right: 2rem;
+        margin-bottom: -0.1rem;
+        padding: 1rem 0rem;
+
+        h3 {
+          font-size: 2.2rem;
+          font-weight: 500;
+
+        }
+      }
+    }
+
+    .new-products-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 100%;
+      height: 26rem;
+
+      .daily-product {
+        margin-top: 2rem;
+        padding: 0.8rem ;
+        margin-bottom: 0rem;
+        padding-bottom: 3rem;
+        // width: 23.2rem;
+        position: relative;
+        height: 26rem;
+        border-bottom: 0.00000000001rem solid #cad5d5;
+        // overflow: hidden;
+
+        
+        &:nth-child(2), 
+        &:nth-child(4), 
+        &:nth-child(6), 
+        &:nth-child(8){
+          .product-info-container {
+            border: none;
+          }
+        }
+        &:nth-child(5),
+        &:nth-child(3){
+          .product-info-container {
+            border-right: 0.00000000001rem solid #cad5d5;
+          }
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+          padding-bottom: 0rem;
+        }
+
+        &:nth-child(6){
+          margin-top: 2rem;
+        }
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9),
+        &:nth-child(10) {
+          margin-top: 0rem;
+        }
+
+        &:nth-child(7),
+        &:nth-child(8){
+          border-bottom:none;
+        }
+
+
+
+        &:hover {
+          // border-radius: 0.5rem;
+          // height: 5rem;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+          border:none;
+
+          // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+          // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+          // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+          .product-info-container {
+            border:none;
+          }
+
+          .price-container {
+            border-bottom: none;
+
+
+          }
+
+          .price-container .view-price {
+            margin-bottom: 2rem;
+
+          }
+
+          .hover-container {
+            visibility: hidden;
             // position: relative;
             // bottom: 10%;
             // display: flex;
@@ -13257,12 +15417,11 @@ about Ends Here
         .product-info-container {
           position: absolute;
           padding-right: 2rem;
-
           border-right: 0.00000000001rem solid #cad5d5;
           padding-right: -2rem;
 
           .daily-product-description {
-            width: 20.1rem;
+            width: 14.5rem;
             height: 3.6rem;
             overflow: hidden;
             white-space: nowrap;
@@ -13285,11 +15444,15 @@ about Ends Here
 
           .product-image {
             // width: 20.1rem;
-            width: 100%;
-            height: 19rem;
+            text-align: center;
+            width: 14rem;
+            height: 14rem;
 
 
             img {
+              // display: block;
+              // margin-right: auto;
+              // margin-left: auto;
               width: 100%;
               height: 100%;
             }
@@ -13305,10 +15468,10 @@ about Ends Here
             height: 2.7rem;
 
             .view-price {
+
               font-size: 2rem;
               color: #343f49;
               font-weight: 400;
-              padding-bottom: 2rem;
 
             }
 
@@ -13369,17 +15532,18 @@ about Ends Here
 
         }
       }
-
     }
-
 
 
   }
 
   .best-sellers {
+    width: 100%;
     margin-bottom: 2rem;
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     margin-top: 2rem;
+      height: 70rem;
+
 
     .sellers-header {
       border-bottom: 0.000001px solid #cad5d5;
@@ -13406,16 +15570,11 @@ about Ends Here
     .content-container {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      height: 70rem;
 
-      .product-item:nth-child(3) {
-        border-right: 0.000001px solid #cad5d5;
-      }
-
-      .product-item:nth-child(2),
-      .product-item:nth-child(4),
-      .product-item:nth-child(8),
+      .product-item:nth-child(3),
       .product-item:nth-child(6) {
         .product-description .product-border {
           border: none;
@@ -13425,20 +15584,27 @@ about Ends Here
       .product-item {
         display: flex;
         // width: 33.3%;
-        width: 17.75rem;
-        height: 17.2rem;
+        // width: 22.6rem;
+             border-bottom: 0.000001px solid #cad5d5;
+
+        height: 15rem;
         justify-content: space-between;
-        margin-bottom: 1rem;
+        // padding-bottom: 2rem;
+        // margin-bottom: 3rem;
+
+        &:nth-child(4){
+          border: none;
+        }
 
         &:hover {
           overflow: hidden;
           z-index: 99;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           & .product-description .price-container {
-            border-bottom: 0.00000000001rem solid #cad5d5;
+            border-bottom: none;
             padding-bottom: 4rem;
             // padding-right: 1.6rem;
 
@@ -13446,11 +15612,11 @@ about Ends Here
           }
 
           & .product-description .product-border {
-            border: none;
+             border-right:none;
           }
 
           .product-description .hover-container {
-            visibility: visible;
+            visibility: hidden;
             // margin-bottom: -6rem;
           }
 
@@ -13458,8 +15624,8 @@ about Ends Here
 
 
         .product-image {
-          width: 13rem;
-          height: 40rem;
+          width: 15rem;
+          height: 14rem;
 
           img {
             width: 100%;
@@ -13470,13 +15636,13 @@ about Ends Here
 
 
         .product-description {
-          width: 14rem;
+          width: 24rem;
           height: 14rem;
 
 
 
           .product-border {
-            border-right: 0.00000000001rem solid #cad5d5;
+            border:none;
             padding-right: 1.6rem;
             // height: 14rem;
 
@@ -13494,7 +15660,7 @@ about Ends Here
           }
 
           .product-name {
-            width: 100%;
+            width: 19rem;
             height: 3.6rem;
             overflow: hidden;
 
@@ -13505,7 +15671,7 @@ about Ends Here
               color: #333e48;
               font-weight: 600;
               font-size: 1.4rem;
-              white-space: wrap;
+              white-space: nowrap;
               text-overflow: ellipsis;
             }
           }
@@ -13587,6 +15753,7 @@ about Ends Here
         }
       }
     }
+
 
   }
 
@@ -14102,11 +16269,12 @@ about Ends Here
 
        .member-profiles {
     display: flex;
-    justify-content: space-between;
-    height: 90rem;
+    // justify-content: space-between;
+    flex-direction: column;
+    height: 115rem;
 
     .member-profile {
-      width: 48%;
+      width: 100%;
        -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
       -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
       box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
@@ -14204,9 +16372,30 @@ about Ends Here
     }
   }
   }
+
+ 
 }
 
 @media only screen and (max-width:320px) {
+    .what .fix{
+  position: fixed;
+  top: 80%;
+  right: 50% ;
+  z-index: 99;
+  
+  a{
+  
+  color:#25d366;
+  width: 10rem;
+  height: 10rem;
+
+  i{
+   
+    font-size: 5rem;
+  }
+  }
+  
+}
   div.content-wrapper {
     padding: 0rem 1rem;
 
@@ -14382,7 +16571,7 @@ about Ends Here
     clear: both;
     display: flex;
 
-    height: 70rem;
+    height: 40rem;
     width: 100%;
     // margin-bottom: 22rem;
 
@@ -14666,10 +16855,9 @@ about Ends Here
 
   .daily-deals {
     background-color: #fff;
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     margin-top: 4rem;
-    height: 145rem;
-
+    height: 57rem;
     width: 100%;
 
     .daily-deals-header {
@@ -14711,6 +16899,7 @@ about Ends Here
 
     // daily deals product
     .slider {
+      width: 100%;
       // //   // width: 24rem;
       //   // height: 24rem;
       // width: inherit;
@@ -14727,60 +16916,70 @@ about Ends Here
 
       ul {
         list-style: none;
+        width: 100%;
+
+        li{
+          width: 100%;
+        }
       }
 
       overflow: hidden;
 
       display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2,1fr);
       width: 100%;
-      height: 140rem;
-      // height: 170rem;
+      height: 55rem;
 
       .daily-product {
-        margin: 2rem auto;
+        width: 100%;
+        margin-top: .5rem;
         padding: 0.8rem;
+        // padding: 0rem;
+        // width: 23.2rem;
+    // border-right: 0.000001px solid #cad5d5;
 
-        width: 22rem;
-        // width: 100%;
         position: relative;
-        height: 35rem;
-        overflow: hidden;
+        height: 25rem;
+        border-bottom: 0.00000000001rem solid #cad5d5;
+        // border-bottom: none;
+        // overflow: hidden;
 
-        &:nth-child(5) {
-          display: none;
-        }
+       
+        
+        
+
+        
 
 
-
-        & {
+        &:hover{
           // border-radius: 0.5rem;
-          height: 30rem;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          height: 25rem;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           // -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           // box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
           .product-info-container {
+            // border-right: 0.1px solid #cad5d5;
             border: none;
           }
 
           .price-container {
-            border-bottom: 0.1px solid #cad5d5;
+            border-bottom: none;
 
 
           }
 
           .price-container .view-price {
-            margin-bottom: 0rem;
+            margin-bottom: 2rem;
 
           }
 
           .hover-container {
-            // visibility: visible;
+            visibility: hidden;
             // position: relative;
             // bottom: 10%;
             // display: flex;
@@ -14804,6 +17003,8 @@ about Ends Here
           }
         }
 
+      
+
 
         .daily-product-category {
           font-size: 1.2rem;
@@ -14816,14 +17017,17 @@ about Ends Here
         }
 
         .product-info-container {
+            width: 13rem;
+
           position: absolute;
           padding-right: 2rem;
 
           border-right: 0.00000000001rem solid #cad5d5;
+          // border: none;
           padding-right: -2rem;
 
           .daily-product-description {
-            width: 20.1rem;
+            width: 12rem;
             height: 3.6rem;
             overflow: hidden;
             white-space: nowrap;
@@ -14846,13 +17050,17 @@ about Ends Here
 
           .product-image {
             // width: 20.1rem;
-            width: 15rem;
-            height: 15rem;
+            text-align: center;
+            width: 11rem;
+            height: 12rem;
 
 
             img {
-              width: 100%;
-              height: 100%;
+              display: block;
+              margin-right: auto;
+              margin-left: auto;
+              width: 50%;
+              height: 80%;
             }
 
           }
@@ -14900,13 +17108,17 @@ about Ends Here
           }
         }
 
+         
+
+         
+
         .hover-container {
           font-size: 1.3rem;
           text-decoration: none;
           display: flex;
           justify-content: space-between;
           padding-top: 1rem;
-          visibility: visible;
+          visibility: hidden;
 
           .add-to-compare,
           .add-to-wishlist {
@@ -14937,6 +17149,285 @@ about Ends Here
 
   }
 
+  .new-arrivals {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0rem 1rem;
+    // height: 90rem;
+    height:115rem;
+
+    // border-bottom: 0.1px solid #cad5d5;
+    // background: red;
+    // height: 120rem;
+    // margin-bottom: 2rem;
+    // clear: both;
+    // display: block;
+
+    .arrivals-header {
+      border-bottom: 0.000001px solid #cad5d5;
+
+      .arrivals-title {
+        line-height: 1;
+        color: #333e48;
+
+        width: 13rem;
+        border-bottom: 2.5px solid #fed700;
+        margin-right: 2rem;
+        margin-bottom: -0.1rem;
+        padding: 1rem 0rem;
+
+        h3 {
+          font-size: 2.2rem;
+          font-weight: 500;
+
+        }
+      }
+    }
+
+    .new-products-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 100%;
+      height: 26rem;
+
+      .daily-product {
+        margin-top: 2rem;
+        padding: 0.8rem ;
+        margin-bottom: 0rem;
+        padding-bottom: 3rem;
+        // width: 23.2rem;
+        position: relative;
+        height: 26rem;
+        border-bottom: 0.00000000001rem solid #cad5d5;
+        // overflow: hidden;
+
+        
+        &:nth-child(2), 
+        &:nth-child(4), 
+        &:nth-child(6), 
+        &:nth-child(8){
+          .product-info-container {
+            border: none;
+          }
+        }
+        &:nth-child(5),
+        &:nth-child(3){
+          .product-info-container {
+            border-right: 0.00000000001rem solid #cad5d5;
+          }
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+          padding-bottom: 0rem;
+        }
+
+        &:nth-child(6){
+          margin-top: 2rem;
+        }
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9),
+        &:nth-child(10) {
+          margin-top: 0rem;
+        }
+
+        &:nth-child(7),
+        &:nth-child(8){
+          border-bottom:none;
+        }
+
+
+
+        &:hover {
+          // border-radius: 0.5rem;
+          // height: 5rem;
+          // -webkit-box-shadow: none;
+          // -moz-box-shadow: none;
+          // box-shadow: none;
+          // border:none;
+
+          -webkit-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+          -moz-box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+          box-shadow: 0px 1px 4px 4px rgba(51,65,65,1);
+          .product-info-container {
+            border:none;
+          }
+
+          .price-container {
+            border-bottom: none;
+
+
+          }
+
+          .price-container .view-price {
+            margin-bottom: 2rem;
+
+          }
+
+          .hover-container {
+            visibility: hidden;
+            // position: relative;
+            // bottom: 10%;
+            // display: flex;
+            // justify-content: space-between;
+
+            .add-to-compare {
+              position: absolute;
+              bottom: 8%;
+              left: 10%;
+
+
+            }
+
+            .add-to-wishlist {
+              position: absolute;
+              bottom: 8%;
+              right: 10%;
+
+
+            }
+          }
+        }
+
+
+        .daily-product-category {
+          font-size: 1.2rem;
+          color: #878787;
+          text-decoration: none;
+          padding-bottom: 4rem;
+
+
+
+        }
+
+        .product-info-container {
+          position: absolute;
+          padding-right: 2rem;
+          border-right: 0.00000000001rem solid #cad5d5;
+          padding-right: -2rem;
+
+          .daily-product-description {
+            width: 12rem;
+            height: 3.6rem;
+            overflow: hidden;
+            white-space: nowrap;
+            /* Don't forget this one */
+            text-overflow: ellipsis;
+
+
+
+            a {
+              height: 100%;
+              width: 100%;
+              font-size: 1.3rem;
+              text-decoration: none;
+              font-weight: 600;
+              color: #333e48;
+
+
+            }
+          }
+
+          .product-image {
+            // width: 20.1rem;
+            text-align: center;
+            width: 11rem;
+            height: 12rem;
+
+
+            img {
+              // display: block;
+              // margin-right: auto;
+              // margin-left: auto;
+              width: 100%;
+              height: 100%;
+            }
+
+          }
+
+          .price-container {
+            // display: flex;
+            // justify-content:center;
+            text-align: center;
+            // border-bottom: 0.000001px solid #cad5d5;
+            padding-bottom: 4rem;
+            height: 2.7rem;
+
+            .view-price {
+
+              font-size: 2rem;
+              color: #343f49;
+              font-weight: 400;
+
+            }
+
+            .add-to-cart {
+              width: 3.5rem;
+              height: 3.5rem;
+              padding-top: 0.4rem;
+              margin-top: -0.6rem;
+              background: #fed700;
+              border-radius: 50%;
+              cursor: pointer;
+              transition: all ease-in 0.1s;
+
+              &:hover {
+                margin-top: -0.8rem;
+              }
+
+
+              i {
+                // width:2rem ;
+                // height:2rem ;
+                font-size: 1.8rem;
+                color: #f5f5f5;
+                text-align: center;
+                padding: 0.4rem 0.6rem;
+              }
+            }
+          }
+        }
+
+        .hover-container {
+          font-size: 1.3rem;
+          text-decoration: none;
+          display: flex;
+          justify-content: space-between;
+          padding-top: 1rem;
+          visibility: hidden;
+
+          .add-to-compare,
+          .add-to-wishlist {
+
+
+
+            a {
+              &:hover {
+                color: #fed700;
+              }
+
+              i {
+                padding-right: 0.5rem;
+              }
+
+              text-decoration: none;
+              color: #848484;
+
+            }
+          }
+
+        }
+      }
+    }
+
+
+  }
+
   .big-ad4 {
     margin-top: 1rem;
     padding: 0rem 1rem;
@@ -14962,11 +17453,12 @@ about Ends Here
     }
   }
 
-  .best-sellers {
+   .best-sellers {
+    width: 100%;
     margin-bottom: 2rem;
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
     margin-top: 2rem;
-    // height:125rem;
+      height: 70rem;
 
 
     .sellers-header {
@@ -14994,16 +17486,11 @@ about Ends Here
     .content-container {
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(4, 1fr);
+      height: 70rem;
 
-      .product-item:nth-child(3) {
-        border-right: 0.000001px solid #cad5d5;
-      }
-
-      .product-item:nth-child(2),
-      .product-item:nth-child(4),
-      .product-item:nth-child(8),
+      .product-item:nth-child(3),
       .product-item:nth-child(6) {
         .product-description .product-border {
           border: none;
@@ -15013,21 +17500,27 @@ about Ends Here
       .product-item {
         display: flex;
         // width: 33.3%;
-        width: 100%;
-        // height: 17.2rem;
-        // height: 20rem;
-        justify-content: space-between;
-        margin-bottom: 1rem;
+        // width: 22.6rem;
+             border-bottom: 0.000001px solid #cad5d5;
 
-        & {
+        height: 15rem;
+        justify-content: space-between;
+        // padding-bottom: 2rem;
+        // margin-bottom: 3rem;
+
+        &:nth-child(4){
+          border: none;
+        }
+
+        &:hover {
           overflow: hidden;
           z-index: 99;
-          -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
-          box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
 
           & .product-description .price-container {
-            border-bottom: 0.00000000001rem solid #cad5d5;
+            border-bottom: none;
             padding-bottom: 4rem;
             // padding-right: 1.6rem;
 
@@ -15035,21 +17528,20 @@ about Ends Here
           }
 
           & .product-description .product-border {
-            border: none;
+             border-right:none;
           }
 
-          // .product-description .hover-container {
-          //   // visibility: visible;
-          //   // margin-bottom: 6rem;
-
-          // }
+          .product-description .hover-container {
+            visibility: hidden;
+            // margin-bottom: -6rem;
+          }
 
         }
 
 
         .product-image {
-          width: 13rem;
-          height: 40rem;
+          width: 11rem;
+          height: 12rem;
 
           img {
             width: 100%;
@@ -15060,13 +17552,13 @@ about Ends Here
 
 
         .product-description {
-          width: 14rem;
+          width: 24rem;
           height: 14rem;
 
 
 
           .product-border {
-            border-right: 0.00000000001rem solid #cad5d5;
+            border:none;
             padding-right: 1.6rem;
             // height: 14rem;
 
@@ -15084,7 +17576,7 @@ about Ends Here
           }
 
           .product-name {
-            width: 100%;
+            width: 15rem;
             height: 3.6rem;
             overflow: hidden;
 
@@ -15095,7 +17587,7 @@ about Ends Here
               color: #333e48;
               font-weight: 600;
               font-size: 1.4rem;
-              white-space: wrap;
+              white-space: nowrap;
               text-overflow: ellipsis;
             }
           }
@@ -15149,7 +17641,7 @@ about Ends Here
             display: flex;
             justify-content: space-between;
             // padding-top: 1rem;
-            visibility: visible;
+            visibility: hidden;
             margin-bottom: 2rem;
 
 
@@ -15177,6 +17669,7 @@ about Ends Here
         }
       }
     }
+
 
   }
 
@@ -15463,11 +17956,12 @@ about Ends Here
 
        .member-profiles {
     display: flex;
-    justify-content: space-between;
-    height: 100.5rem;
+    // justify-content: space-between;
+    flex-direction: column;
+    height: 125.5rem;
 
     .member-profile {
-      width: 48%;
+      width: 100%;
        -webkit-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
       -moz-box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);
       box-shadow: 0px 1px 4px 4px rgba(202, 213, 213, 1);

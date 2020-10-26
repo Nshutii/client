@@ -128,8 +128,8 @@ const Shop = () => {
                         </div>
                     </div>
 
-                    <div className="col-lg-10 col-md-10 col-sm-12 shop-prod">
-                        <h2 className="mb-4 text-center">Products</h2>
+                    <h2 className="">Products</h2>
+                    <div className=" shop-prod">
                         <div className="row">
                             {filteredResults.map((product, i) => (
                                 <div key={i} className="mb-3">
