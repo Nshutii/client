@@ -25,7 +25,6 @@ import Orders from './admin/Orders';
 import Profile from './user/Profile';
 import ManageProducts from './admin/ManageProducts';
 import UpdateProduct from './admin/UpdateProduct';
-import Phone from './core/Phone';
 // import UpdateCategory from './admin/updateCategory';
 
 const Routes = () => {
