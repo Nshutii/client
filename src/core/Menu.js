@@ -37,6 +37,10 @@ const Menu = ({ history }) =>{
     window.location.pathname = '/contact'
    
   } 
+
+  
+
+ 
   
 return (
     
@@ -54,6 +58,8 @@ return (
                     <section className="header-info">
                         <div className="header-info-text">
                             <ul>
+                                
+                                
                                 <li><i className="fab fa-whatsapp"></i>
                                  <a href="https://wa.me/message/SJKXVM2EKVS7E1" target="_blank">+250 727 311 429</a></li>
 
@@ -66,7 +72,8 @@ return (
                                  </a>
                                 
                                 </li>
-                                <li><Link to="/"><img src={logo} alt=""/></Link></li>
+                                
+                                <li><Link to="/" onClick={refreshPage}><img src={logo} alt=""/></Link></li>
                             </ul>
                         </div>
                         <div className="header-info-list">
@@ -176,7 +183,7 @@ return (
                                 )}
 
                                 {isAuthenticated() && (
-                                    <li className=" mr-auto ">
+                                    <li>
                                         <span
                                             className=" text-dark mb-2"
                                             style={{ cursor: "pointer", color: "#ffffff" }}
@@ -201,10 +208,11 @@ return (
         </div>
         <div className="content-wrapper">
             <nav className="navigation">
+                                    
+
                 <div className="navigation-logo">
                     <Link to='/'  onClick={refreshPage} >
 
-              
                        <img   src={logo} alt=""/>
         
          

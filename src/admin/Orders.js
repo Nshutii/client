@@ -143,6 +143,9 @@ const Orders = () => {
                                       -  Delivery District :  <span>{o.district}</span>
                                     </li>
                                     <li className="list-items">
+                                      -  Delivery Phone Color :  <span>{o.color}</span>
+                                    </li>
+                                    <li className="list-items">
                                       -  Delivery Sector :  <span>{o.sector}</span>
                                     </li>
                                     <li className="list-items">

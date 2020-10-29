@@ -6,7 +6,7 @@ import { Col, Row, Button } from 'antd';
 import Icon from '@ant-design/icons';
 import ShowImage from './Tools/ShowImage';
 import { getProducts, getProductsBySell, getDailyProducts, getCategories, getFilteredProducts } from "./apiCore";
-import Checkbox from "./Checkbox";
+import List from "./ListCategories";
 import { addItem, addWishlistItem } from './cartHelpers';
 import Menu from './Menu'
 import Footer from './Footer'
@@ -161,37 +161,39 @@ const Home = (props) => {
       console.log('added');
     };
     return <ul key={index} id="autoWidth" className="cS-hidden">
-      <li className="item-a">
-        <div className="daily-product">
-          <Link to="" className="daily-product-category">{product.brand}</Link>
-          <div className="product-info-container">
+      <Link to={`/product/${product._id}`}>
+        <li className="item-a">
+          <div className="daily-product">
+            <Link to="" className="daily-product-category">{product.brand}</Link>
+            <div className="product-info-container">
 
-            <div className="daily-product-description">
-              <Link to={`/product/${product._id}`}>
-                {product.title}
-              </Link>
+              <div className="daily-product-description">
+                <Link to={`/product/${product._id}`}>
+                  {product.title}
+                </Link>
+              </div>
+              <div className="product-image">
+                <Link to={`/product/${product._id}`}>
+                  <ShowImage images={product.images} />
+                </Link>
+              </div>
+              <div className="price-container">
+                <div className="view-price"><span>{`Rwf ${product.price}`}</span></div>
+                {/* <button onClick={addToCart} className="add-to-cart"><i className="fas fa-cart-plus"></i></button> */}
+              </div>
             </div>
-            <div className="product-image">
-              <Link to={`/product/${product._id}`}>
-                <ShowImage images={product.images} />
-              </Link>
-            </div>
-            <div className="price-container">
-              <div className="view-price"><span>{`Rwf ${product.price}`}</span></div>
-              {/* <button onClick={addToCart} className="add-to-cart"><i className="fas fa-cart-plus"></i></button> */}
+
+            <div className="hover-container">
+              <div className="add-to-compare">
+                <Link to="/cart" onClick={addToCart} title="Add to Cart"><i className="fas fa-cart-plus"></i>Cart</Link>
+              </div>
+              <div className="add-to-wishlist">
+                <Link to="/wishlist" onClick={addToWishlist} title="Add to WishList"><i className="far fa-heart"></i>WishList</Link>
+              </div>
             </div>
           </div>
-
-          <div className="hover-container">
-            <div className="add-to-compare">
-              <Link to="/cart" onClick={addToCart} title="Add to Cart"><i className="fas fa-cart-plus"></i>Cart</Link>
-            </div>
-            <div className="add-to-wishlist">
-              <Link to="/wishlist" onClick={addToWishlist} title="Add to WishList"><i className="far fa-heart"></i>WishList</Link>
-            </div>
-          </div>
-        </div>
-      </li>
+        </li>
+      </Link>
 
 
 
@@ -211,35 +213,36 @@ const Home = (props) => {
       console.log('added');
     };
     return <div key={index} className="daily-product">
+      <Link to={`/product/${product._id}`}>
 
+        <Link to="" className="daily-product-category">{product.brand}</Link>
+        <div className="product-info-container">
 
-      <Link to="" className="daily-product-category">{product.brand}</Link>
-      <div className="product-info-container">
+          <div className="daily-product-description">
+            <Link to={`/product/${product._id}`}>
+              {product.title}
+            </Link>
+          </div>
+          <div className="product-image">
+            <Link to={`/product/${product._id}`}>
+              <ShowImage images={product.images} />
+            </Link>
+          </div>
+          <div className="price-container">
+            <div className="view-price"><span>{`Rwf ${product.price}`}</span></div>
+            {/* <button onClick={addToCart} className="add-to-cart"><i className="fas fa-cart-plus"></i></button> */}
+          </div>
+        </div>
 
-        <div className="daily-product-description">
-          <Link to={`/product/${product._id}`}>
-            {product.title}
-          </Link>
+        <div className="hover-container">
+          <div className="add-to-compare">
+            <Link to="/cart" onClick={addToCart} title="Add to Cart"><i className="fas fa-cart-plus"></i>Cart</Link>
+          </div>
+          <div className="add-to-wishlist">
+            <Link to="/wishlist" onClick={addToWishlist} title="Add to WishList"><i className="far fa-heart"></i>WishList</Link>
+          </div>
         </div>
-        <div className="product-image">
-          <Link to={`/product/${product._id}`}>
-            <ShowImage images={product.images} />
-          </Link>
-        </div>
-        <div className="price-container">
-          <div className="view-price"><span>{`Rwf ${product.price}`}</span></div>
-          {/* <button onClick={addToCart} className="add-to-cart"><i className="fas fa-cart-plus"></i></button> */}
-        </div>
-      </div>
-
-      <div className="hover-container">
-        <div className="add-to-compare">
-          <Link to="/cart" onClick={addToCart} title="Add to Cart"><i className="fas fa-cart-plus"></i>Cart</Link>
-        </div>
-        <div className="add-to-wishlist">
-          <Link to="/wishlist" onClick={addToWishlist} title="Add to WishList"><i className="far fa-heart"></i>WishList</Link>
-        </div>
-      </div>
+      </Link>
     </div>
 
   })
@@ -255,40 +258,41 @@ const Home = (props) => {
       console.log('added');
     };
     return <div key={index} className="product-item">
+
       <div className="product-image">
         <Link to={`/product/${product._id}`}>
           <ShowImage images={product.images} />
         </Link>
       </div>
+      <Link className="text-decoration-none" to={`/product/${product._id}`}>
+        <div className="product-description">
+          <div className="product-border">
+            <div className="product-category">
 
-      <div className="product-description">
-        <div className="product-border">
-          <div className="product-category">
+              <Link to="" >{product.brand}</Link>
+            </div>
+            <div className="product-name">
+              <Link to={`/product/${product._id}`}>
+                {product.title}
+              </Link>
+            </div>
 
-            <Link to="" >{product.brand}</Link>
+            <div className="price-container">
+              <div className="view-price"><span>{`Rwf ${product.price}`}</span></div>
+              {/* <button onClick={addToCart} className="add-to-cart"><i className="fas fa-cart-plus"></i></button> */}
+            </div>
           </div>
-          <div className="product-name">
-            <Link to={`/product/${product._id}`}>
-              {product.title}
-            </Link>
-          </div>
 
-          <div className="price-container">
-            <div className="view-price"><span>{`Rwf ${product.price}`}</span></div>
-            {/* <button onClick={addToCart} className="add-to-cart"><i className="fas fa-cart-plus"></i></button> */}
+          <div className="hover-container">
+            <div className="add-to-compare">
+              <Link to="/cart" onClick={addToCart} title="Add to Cart"><i className="fas fa-cart-plus"></i>Cart</Link>
+            </div>
+            <div className="add-to-wishlist">
+              <Link to="/wishlist" onClick={addToWishlist} title="Add to WishList"><i className="far fa-heart"></i>WishList</Link>
+            </div>
           </div>
         </div>
-
-        <div className="hover-container">
-          <div className="add-to-compare">
-            <Link to="/cart" onClick={addToCart} title="Add to Cart"><i className="fas fa-cart-plus"></i>Cart</Link>
-          </div>
-          <div className="add-to-wishlist">
-            <Link to="/wishlist" onClick={addToWishlist} title="Add to WishList"><i className="far fa-heart"></i>WishList</Link>
-          </div>
-        </div>
-      </div>
-
+      </Link>
 
 
     </div>
@@ -302,7 +306,18 @@ const Home = (props) => {
       <Menu />
 
       <div className="main-home" >
-
+        <section className="categories">
+          <h2><i className="fas fa-bars"></i>Categories</h2>
+          <ul className="main-categories">
+            <List
+              categories={categories}
+              handleFilters={filters =>
+                handleFilters(filters, "category")
+              }
+            />
+          </ul>
+          <a href=""><div className="other-ad"></div></a>
+        </section>
         <section className='slider-info'>
           <div className="slide-container">
 

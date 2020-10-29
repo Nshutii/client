@@ -13,6 +13,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
         error: '',
         instance: {},
         phone: '',
+        color: '',
         district: '',
         sector: '',
         cell: '',
@@ -38,6 +39,10 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
     useEffect(() => {
         getToken(userId, token);
     }, []);
+
+    const handleColor = event => {
+        setData({ ...data, color: event.target.value });
+    };
 
     const handleAddress = event => {
         setData({ ...data, address: event.target.value });
@@ -74,6 +79,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
             );
     };
 
+    let deliveryColor = data.color
     let deliveryAddress = data.address
     let phoneNumber = data.phone
     let deliveryDistrict = data.district
@@ -89,6 +95,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
             products: products,
             amount: getTotal(products),
             phone: phoneNumber,
+            color: deliveryColor,
             district: deliveryDistrict,
             sector: deliverySector,
             cell: deliveryCell,
@@ -120,23 +127,28 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                 <form className="deliveryInputs ">
 
                     <div className="deliverys mt-4">
-                        <input onChange={handleDistrict} value={data.district} type="text" placeholder='District' required />
+                        <input onChange={handleColor} value={data.color} type="text" placeholder='Phone Color' />
+
+                    </div>
+
+                    <div className="deliverys mt-4">
+                        <input onChange={handleDistrict} value={data.district} type="text" placeholder='District' />
 
                     </div>
                     <div className="deliverys mt-4">
-                        <input onChange={handleSector} value={data.sector} type="text" placeholder='Sector' required />
+                        <input onChange={handleSector} value={data.sector} type="text" placeholder='Sector' />
 
                     </div>
                     <div className="deliverys mt-4">
-                        <input onChange={handleCell} value={data.cell} type="text" placeholder='Cell' required />
+                        <input onChange={handleCell} value={data.cell} type="text" placeholder='Cell' />
 
                     </div>
                     <div className="deliverys mt-4">
-                        <input onChange={handleVillage} value={data.village} type="text" placeholder='Village' required />
+                        <input onChange={handleVillage} value={data.village} type="text" placeholder='Village' />
 
                     </div>
                     <div className="deliverys mt-4">
-                        <input onChange={handlePhone} value={data.phone} type="phone" placeholder='Phone' required />
+                        <input onChange={handlePhone} value={data.phone} type="phone" placeholder='Phone' />
 
                     </div>
 
@@ -148,7 +160,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                             className="form-control"
                             value={data.address}
                             placeholder="Type your delivery address here..."
-                            required
+                        
                         />
                     </div>
 

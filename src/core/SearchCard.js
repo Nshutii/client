@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import ShowImage from './Tools/ShowImage';
 import moment from 'moment';
-import { addItem, addWishlistItem, updateItem, removeItem } from './cartHelpers';
+import { addItem,addWishlistItem, updateItem, removeItem } from './cartHelpers';
 
 const Card = ({
   product,
@@ -60,7 +60,7 @@ const Card = ({
     return (
       showAddToWishlistButton && (
         <button onClick={addToWishlist} id='bt'
-          className="btn btn-outline-secondary mt-2 mb-2">Add to WishList</button>
+         className="btn btn-outline-secondary mt-2 mb-2">Add to WishList</button>
       )
     );
   };
@@ -141,6 +141,7 @@ const Card = ({
           <img alt="product" src={renderCartImage(product.images)} />
         </Link>
       </div>
+ <Link className="text-decoration-none" to={`/product/${product._id}`}>
 
       <div className="product-description">
         <div className="product-border">
@@ -159,7 +160,7 @@ const Card = ({
             {/* <button onClick={addToCart} className="add-to-cart"><i className="fas fa-cart-plus"></i></button> */}
           </div>
         </div>
-        <div className="hover-container hover-dNone">
+        <div id='hover-container' className="hover-container hover-dNone">
           <div className="add-to-compare">
             <Link to="/cart" onClick={addToCart} title="Add to Cart"><i className="fas fa-cart-plus"></i>Cart</Link>
           </div>
@@ -168,7 +169,7 @@ const Card = ({
           </div>
         </div>
       </div>
-
+</Link>
     </div>
 
 
