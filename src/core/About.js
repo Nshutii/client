@@ -6,7 +6,7 @@ import Footer from './Footer';
 import img1 from '../img/4.jpg'
 import img2 from '../img/4.jpg'
 import img3 from '../img/4.jpg'
-import img4 from '../img/3.jpg'
+import img4 from '../img/logo.jpg'
 import ceo from '../img/ceo.jpg'
 import cto from '../img/cto.jpg'
 const About = () => {
@@ -20,21 +20,22 @@ const About = () => {
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, voluptate velit! Sed officiis nulla dignissimos non. Nam recusandae sed dignissimos quis maiores doloribus, officia blanditiis animi culpa eius aut eum.</p>
       </div>
 
-      <div className="about-info">
-        <div className="about-info-card">
-          <div className="info-image"><img src={img1} alt="" /></div>
-          <h5>History of Beginning ?</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis debitis voluptas magni, quis aut quibusdam quasi quam est exercitationem aliquid libero error accusantium ullam fugit et quae quod? Voluptatibus, reiciendis.</p>
-        </div>
-        <div className="about-info-card">
-          <div className="info-image"><img src={img3} alt="" /></div>
-          <h5>What we really do?</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis debitis voluptas magni, quis aut quibusdam quasi quam est exercitationem aliquid libero error accusantium ullam fugit et quae quod? Voluptatibus, reiciendis.</p>
-        </div>
-        <div className="about-info-card">
-          <div className="info-image"><img src={img2} alt="" /></div>
-          <h5>Our Vision ?</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis debitis voluptas magni, quis aut quibusdam quasi quam est exercitationem aliquid libero error accusantium ullam fugit et quae quod? Voluptatibus, reiciendis.</p>
+      <div className="about-info-container">
+        <div className="image"><img src={img3} alt="" /></div>
+
+        <div className="about-info">
+          <div className="about-info-card">
+            <h5>History of Beginning ?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis debitis voluptas magni, quis aut quibusdam quasi quam est exercitationem aliquid libero error accusantium ullam fugit et quae quod? Voluptatibus, reiciendis.</p>
+          </div>
+          <div className="about-info-card">
+            <h5>What we really do?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis debitis voluptas magni, quis aut quibusdam quasi quam est exercitationem aliquid libero error accusantium ullam fugit et quae quod? Voluptatibus, reiciendis.</p>
+          </div>
+          <div className="about-info-card">
+            <h5>Our Vision ?</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis debitis voluptas magni, quis aut quibusdam quasi quam est exercitationem aliquid libero error accusantium ullam fugit et quae quod? Voluptatibus, reiciendis.</p>
+          </div>
         </div>
       </div>
 
@@ -121,7 +122,7 @@ const About = () => {
 
                 <Link to="https://twitter.com/ndiisanze" target="_blank" title="Twitter"><i className="fab fa-twitter" ></i></Link>
                 <Link to="https://www.instagram.com/ndiisanze/" target="_blank" title="Instagram" ><i className="fab fa-instagram"></i></Link>
-                
+
               </div>
             </div>
           </div>

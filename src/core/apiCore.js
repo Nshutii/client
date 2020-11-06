@@ -4,7 +4,7 @@ import {
 import queryString from "query-string";
 
 export const getDailyProducts = (sortBy) => {
-  return fetch(`${API}/getProducts?sortBy=${sortBy}&order=asc&limit=5`, {
+  return fetch(`${API}/getProducts?sortBy=${sortBy}&order=asc&limit=6`, {
     method: "GET"
   })
     .then(response => {
@@ -14,7 +14,7 @@ export const getDailyProducts = (sortBy) => {
 };
 
 export const getProducts = async (sortBy) => {
-  return await fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=10`, {
+  return await fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=12`, {
     method: "GET"
   })
     .then(response => {
@@ -23,7 +23,7 @@ export const getProducts = async (sortBy) => {
     .catch(err => console.log(err));
 };
 export const getProductsBySell = async (sortBy) => {
-  return await fetch(`${API}/productBySell?sortBy=${sortBy}&order=desc&limit=6`, {
+  return await fetch(`${API}/productBySell?sortBy=${sortBy}&order=desc&limit=8`, {
     method: "GET"
   })
     .then(response => {

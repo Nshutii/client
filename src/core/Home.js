@@ -34,16 +34,16 @@ const Home = (props) => {
   const [Limit, setLimit] = useState(8)
   const [PostSize, setPostSize] = useState()
   const [SearchTerms, setSearchTerms] = useState("")
-  const [categories, setCategories] = useState([]);
+  const [Categories, setCategories] = useState([]);
 
   const [myFilters, setMyFilters] = useState({
     filters: { category: [], price: [] }
   });
   const [Product, setProduct] = useState([]);
   const [redirect, setRedirect] = useState(false);
-  const [productsByArrival, setProductsByArrival] = useState([]);
-  const [productsByDay, setProductsByDay] = useState([]);
-  const [productsBySell, setProductsBySell] = useState([]);
+  const [ProductsByArrival, setProductsByArrival] = useState([]);
+  const [ProductsByDay, setProductsByDay] = useState([]);
+  const [ProductsBySell, setProductsBySell] = useState([]);
   const [error, setError] = useState(false);
   // const [filteredResults, setFilteredResults] = useState([]);
   const [size, setSize] = useState(0);
@@ -148,7 +148,7 @@ const Home = (props) => {
     setSkip(skip)
   }
 
-  const renderCardByDay = productsByDay.map((product, index) => {
+  const renderCardByDay = ProductsByDay.map((product, index) => {
 
 
 
@@ -200,7 +200,7 @@ const Home = (props) => {
     </ul>
 
   })
-  const renderCardByArrival = productsByArrival.map((product, index) => {
+  const renderCardByArrival = ProductsByArrival.map((product, index) => {
 
 
 
@@ -248,7 +248,7 @@ const Home = (props) => {
   })
 
 
-  const renderCardBySell = productsBySell.map((product, index) => {
+  const renderCardBySell = ProductsBySell.map((product, index) => {
     const addToCart = () => {
       addItem(product, setRedirect(true));
       console.log('added');
@@ -309,12 +309,17 @@ const Home = (props) => {
         <section className="categories">
           <h2><i className="fas fa-bars"></i>Categories</h2>
           <ul className="main-categories">
-            <List
-              categories={categories}
-              handleFilters={filters =>
-                handleFilters(filters, "category")
-              }
-            />
+            {Categories.length === 0 ?
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div class="spinner-1"></div>
+              </div> :
+              <List
+                categories={Categories}
+                handleFilters={filters =>
+                  handleFilters(filters, "category")
+                }
+              />
+            }
           </ul>
           <a href=""><div className="other-ad"></div></a>
         </section>
@@ -334,11 +339,11 @@ const Home = (props) => {
               <a href="https://www.youtube.com/"><img src={img2} alt="" /></a>
 
             </div>
-            <div className="other-menu3">
+            <div className="other-menu6">
               <a href="https://www.amazon.com/"><img src={img1} alt="" /></a>
 
             </div>
-            <div className="other-menu2">
+            <div className="other-menu7">
               <a href="https://www.youtube.com/"><img src={img2} alt="" /></a>
 
             </div>
@@ -357,9 +362,14 @@ const Home = (props) => {
           <div className="daily-deals-title"> <h3>Deals Of The Day</h3></div>
           <div className="countdown">Ends in: 00:00:00</div>
         </div>
-        <section className="slider">
-          {renderCardByDay}
-        </section>
+        {ProductsByDay.length === 0 ?
+          <div style={{ padding: '20px', alignItems: 'center' }}>
+            <div class="spinner-1"></div>
+          </div> :
+          <section className="slider">
+            {renderCardByDay}
+          </section>
+        }
       </section>
       <section className="big-ad1-container">
         <div className="big-ad1">
@@ -373,14 +383,16 @@ const Home = (props) => {
 
           <div className="arrivals-title"> <h3>New Arrivals</h3></div>
         </div>
-        <div className="new-products-container">
+        {ProductsByArrival.length === 0 ?
+          <div style={{ padding: '20px', alignItems: 'center' }}>
+            <div class="spinner-1"></div>
+          </div> :
+          <div className="new-products-container">
 
-          {renderCardByArrival}
+            {renderCardByArrival}
 
-
-
-        </div>
-
+          </div>
+        }
       </div>
       <section className="big-ad4">
 
@@ -399,11 +411,14 @@ const Home = (props) => {
 
 
         {/* <div className="tab"> */}
-        <div className="content-container">
-          {renderCardBySell}
-        </div>
-        {/* </div> */}
-        {/* </div> */}
+        {ProductsBySell.length === 0 ?
+          <div style={{ padding: '20px', alignItems: 'center' }}>
+            <div class="spinner-1"></div>
+          </div> :
+          <div className="content-container">
+            {renderCardBySell}
+          </div>
+        }
       </section>
 
 

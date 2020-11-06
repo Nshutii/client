@@ -123,9 +123,9 @@ const Orders = () => {
                                 </h2> */}
 
                                 <ul className="listGroup mb-2">
-                                    {/* <li className="list-group-item">
+                                    <li className="list-group-item">
                                         {showStatus(o)}
-                                    </li> */}
+                                    </li>
                                     {/* <li className="list-group-item">
                                         Transaction ID: {o.transaction_id}
                                     </li> */}
