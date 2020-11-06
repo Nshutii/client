@@ -4721,7 +4721,54 @@ about Ends Here
 
 
 
+ .card-images {
+          // display: grid;
+          // grid-template-columns: repeat(4, 1fr);
+          // grid-template-rows: repeat(2, 1fr);
+          // grid-gap: 1rem;
+          
 
+            background: #fff;
+             width: 20rem;
+            height: 19.5rem;
+            padding: 1rem;
+            margin: 0 auto;
+            a{
+              text-decoration: none;
+
+          .image {
+             margin: 0 auto;
+            //  width: 22.5rem;
+            border: .1px solid #C1C3C6;
+             padding: 1rem;
+            // position: relative;
+
+            img{
+            width: 12.5rem;
+            height: 11.5rem;
+            margin: 0 1rem;
+            // position: absolute;
+            border-bottom: .1px solid #C1C3C6;
+            padding-bottom: .7rem;
+
+            }
+            button{
+              font-size: 1.2rem;
+              font-weight: 600;
+            margin-top: .7rem;
+              //  &:hover {
+              //    background
+              //  }
+              text-decoration: none;
+
+            }
+            }
+            }
+            }
+
+
+
+ 
 
 /*/////////////////
   Footer Ends Here
@@ -8121,7 +8168,7 @@ margin-top: -2rem;
 .what .fix{
   position: fixed;
   top: 87%;
-  right: 2% ;
+  right: 5.5% ;
   z-index: 99;
  
   
@@ -9992,7 +10039,7 @@ margin-top: -2rem;
 .what .fix{
   position: fixed;
   top: 87%;
-  right: 2% ;
+  right: 5.5% ;
   z-index: 99;
  
   
@@ -14944,7 +14991,7 @@ margin-top: -2rem;
 .what .fix{
   position: fixed;
   top: 87%;
-  right: 2% ;
+  right: 3% ;
   z-index: 99;
  
   
@@ -20759,7 +20806,7 @@ margin-top: -2rem;
 .what .fix{
   position: fixed;
   top: 87%;
-  right: 2% ;
+  right: 5% ;
   z-index: 99;
  
   
@@ -23773,7 +23820,7 @@ margin-top: -2rem;
 .what .fix{
   position: fixed;
   top: 87%;
-  right: 2% ;
+  right: 4% ;
   z-index: 99;
  
   
@@ -26128,7 +26175,7 @@ margin-top: -2rem;
 .what .fix{
   position: fixed;
   top: 87%;
-  right: 2% ;
+  right: 6% ;
   z-index: 99;
  
   
